@@ -17,8 +17,8 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Halaman</th>
-                                        <th scope="col">Keadaan</th>
                                         <th scope="col">Aksi</th>
+                                        <th scope="col">Keadaan</th>
 
 
                                     </tr>

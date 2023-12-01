@@ -44,10 +44,10 @@
                                             <td>{{ $laporan->kecamatan }}</td>
                                             <td>{{ $laporan->desa }}</td>
                                             <td>{{ $laporan->capaian }}</td>
-                                            <td>{{ $laporan->nilai }}</td>
+                                            <td>Rp.{{ number_format($laporan->nilai, 0, ',', '.') }}</td>
                                             <td>{{ $laporan->permasalahan }}</td>
                                             <td>{{ $laporan->rencana }}</td>
-                                            <td>{{ $laporan->nilai2 }}</td>
+                                            <td>Rp.{{ number_format($laporan->nilai2, 0, ',', '.') }}</td>
                                             <td>{{ $laporan->unit_usaha }}</td>
                                             <td><a href="{{ asset('storage/' . $laporan->surat) }}"
                                                     target="_blank">Surat</a>

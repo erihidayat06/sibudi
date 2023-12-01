@@ -43,8 +43,7 @@ Route::resource('/update-profil', UpdateProfilController::class)->middleware('n_
 Route::get('/update-profil-admin', [UpdateProfilController::class, 'admin'])->middleware('admin');
 Route::get('/export-update-profil', [UpdateProfilController::class, 'laporanExcel'])->middleware('admin');
 
-Route::get('/login-admin', [LoginController::class, 'index']);
-Route::post('/login-admin', [LoginController::class, 'authenticate']);
+Route::post('/login-admin', [LoginController::class, 'authenticate'])->middleware('guest');
 
 Route::get('buka-fitur', [BukaFiturController::class, 'index'])->middleware('admin');
 Route::put('buka-fitur/{bukaFitur:id}', [BukaFiturController::class, 'update'])->middleware('admin');

@@ -7,7 +7,7 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">kanal Semester</h5>
+                        <h5 class="card-title">Kanal Pengaduan</h5>
 
                         <a href="/kanal-pengaduan/create" class="btn btn-sm btn-primary mt-3 mb-3">Tambah Lopran</a>
 

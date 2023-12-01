@@ -8,7 +8,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Laporan Semester / Pengajuan Penamanbahan Modal</h5>
+                        <h5 class="card-title">Laporan Akhir Tahun / Pengajuan Penamanbahan Modal</h5>
 
 
                         <a href="/export-laporan-akhir-tahun" class="btn btn-success btn-sm mb-3 mt-3">Export</a>
@@ -51,12 +51,12 @@
                                             <td>{{ $laporan->kecamatan }}</td>
                                             <td>{{ $laporan->desa }}</td>
                                             <td>{{ $laporan->capaian }}</td>
-                                            <td>{{ $laporan->nilai }}</td>
+                                            <td>Rp.{{ number_format($laporan->nilai, 0, ',', '.') }}</td>
                                             <td>{{ $laporan->pandes }}</td>
                                             <td>{{ $laporan->permasalahan }}</td>
                                             <td>{{ $laporan->unit_usaha }}</td>
                                             <td>{{ $laporan->rencana }}</td>
-                                            <td>{{ $laporan->nilai2 }}</td>
+                                            <td>{Rp.{{ number_format($laporan->nilai2, 0, ',', '.') }}</td>
                                             <td>{{ $laporan->unit_usaha_permodalan }}</td>
                                             <td><a href="{{ asset('storage/' . $laporan->surat) }}"
                                                     target="_blank">Surat</a>

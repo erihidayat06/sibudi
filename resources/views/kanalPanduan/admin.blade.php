@@ -7,9 +7,10 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">kanal Semester / Pengajuan Penamanbahan Modal</h5>
+                        <h5 class="card-title">Kanal Semester</h5>
 
                         <a href="/export-kanal" class="btn btn-success btn-sm mb-3 mt-3">Export</a>
+
 
                         <!-- Table with stripped rows -->
                         <div class="table-responsive">

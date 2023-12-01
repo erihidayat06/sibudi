@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title">
-                        Form Kanal Pengaduan
+                        Form Update Profil BUMDes
                     </div>
 
                     <form action="/update-profil/{{ $update->id }}" method="POST" enctype="multipart/form-data">

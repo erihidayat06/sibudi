@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title">
-                        Form Laporan Semester
+                        Form Laporan Akhir Tahun
                     </div>
 
                     <form action="/laporan-akhir/{{ $laporan->id }}" method="POST" enctype="multipart/form-data">
@@ -30,7 +30,7 @@
 
 
                         {{-- capaian --}}
-                        <label class="mt-3" for="capaian">capaian</label><br>
+                        <label class="mt-3" for="capaian">Capaian satu tahun</label><br>
                         <div class="btn-group" role="group" aria-label="Small radio toggle button group">
                             <input type="radio" class="btn-check @error('capian') is-invalid @enderror" name="capaian"
                                 id="capaian1" value="untung" autocomplete="off" checked>
@@ -48,9 +48,12 @@
                         @enderror
 
                         {{-- nilai --}}
-                        <label class="mt-3" for="nilai">nilai</label>
-                        <input type="number" class="form-control @error('nilai') is-invalid @enderror"
-                            value="{{ old('nilai', $laporan) }}" name="nilai" id="nilai">
+                        <label class="mt-3" for="nilai">Nilai</label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="nilai">Rp</span>
+                            <input type="text" class="form-control @error('nilai') is-invalid @enderror"
+                                value="{{ old('nilai', $laporan) }}" name="nilai" id="nilai" aria-describedby="nilai">
+                        </div>
                         @error('nilai')
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -98,16 +101,20 @@
                         @enderror
 
                         {{-- nilai2 --}}
-                        <label class="mt-3" for="nilai2">nilai2</label>
-                        <input type="number" class="form-control @error('nilai2') is-invalid @enderror"
-                            value="{{ old('nilai2', $laporan) }}" name="nilai2" id="nilai2">
+                        <label class="mt-3" for="nilai2">nilai Pengajuan</label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="nilai2">Rp</span>
+                            <input type="text" class="form-control @error('nilai2') is-invalid @enderror"
+                                value="{{ old('nilai2', $laporan) }}" name="nilai2" id="nilai2"
+                                aria-describedby="nilai2">
+                        </div>
                         @error('nilai2')
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
                         @enderror
 
                         {{-- unit usaha --}}
-                        <label class="mt-3" for="unit_usaha_permodalan">Unit Usaha yang di Kembangkan dengan
-                            Permodalan</label>
+                        <label class="mt-3" for="unit_usaha_permodalan">Unit Usaha yang dikembangkan dengan
+                            permodalan</label>
                         <input type="text" class="form-control @error('unit_usaha_permodalan') is-invalid @enderror"
                             value="{{ old('unit_usaha_permodalan', $laporan) }}" name="unit_usaha_permodalan"
                             id="unit_usaha_permodalan">
