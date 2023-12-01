@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
+use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Imports\UserImport;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class RegisterController extends Controller
 {
@@ -103,6 +107,32 @@ class RegisterController extends Controller
 
         $user->delete();
 
+        return redirect()->back();
+    }
+
+    public function import_excel(Request $request)
+    {
+        // validasi
+        $this->validate($request, [
+            'file' => 'required|mimes:csv,xls,xlsx'
+        ]);
+
+        // menangkap file excel
+        $file = $request->file('file');
+
+        // membuat nama file unik
+        $nama_file = rand() . $file->getClientOriginalName();
+
+        // upload ke folder file_siswa di dalam folder public
+        $file->move('pdfs', $nama_file);
+
+        // import data
+        Excel::import(new UserImport, public_path('/pdfs/' . $nama_file));
+
+        // notifikasi dengan session
+        session()->flash('sukses', 'Data Siswa Berhasil Diimport!');
+
+        // alihkan halaman kembali
         return redirect()->back();
     }
 }

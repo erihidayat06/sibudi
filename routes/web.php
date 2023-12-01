@@ -51,6 +51,8 @@ Route::put('buka-fitur/{bukaFitur:id}', [BukaFiturController::class, 'update'])-
 
 Route::delete('/register/{user:id}', [RegisterController::class, 'destroy']);
 
+Route::post('/register/import-excel', [RegisterController::class, 'import_excel']);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

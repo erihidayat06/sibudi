@@ -106,6 +106,7 @@ class UpdateProfilController extends Controller
      */
     public function update(Request $request, UpdateProfil $updateProfil)
     {
+
         $validateData = $request->validate([
             'kecamatan' => 'required',
             'desa' => 'required',
@@ -126,6 +127,10 @@ class UpdateProfilController extends Controller
             'sk_pengelola' => 'mimes:pdf|max:10240',
             'setifikat_badan' => 'mimes:pdf|max:10240',
         ]);
+
+        if ($request->bidang_usaha_dijalankan == null) {
+            $validateData['bidang_usaha_dijalankan'] = 0;
+        }
 
         if ($request->hasFile('perdes_pendiri')) {
             // Update file PDF jika ada yang diunggah
