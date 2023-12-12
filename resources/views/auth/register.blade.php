@@ -19,7 +19,7 @@
                                     <select class="form-select @error('kecamatan') is-invalid @enderror"
                                         aria-label="Default select example" id="kecamatan" name="kecamatan">
                                         <option selected>Pilih Kecamatan</option>
-                                        @foreach ($kecamatans as $kecamatan)
+                                        @foreach (app('kecamatan', [4]) as $kecamatan)
                                             <option value="{{ $kecamatan['id'] }}">{{ $kecamatan['name'] }}</option>
                                         @endforeach
                                     </select>
@@ -142,7 +142,10 @@
                         @php
                             $i = 1;
                         @endphp
-                        @foreach ($users as $user)
+                        @php
+                            use App\Models\User;
+                        @endphp
+                        @foreach (User::latest()->get()->where('admin', false) as $user)
                             <tr>
                                 <th scope="row">{{ $i++ }}</th>
                                 <td>{{ $user->kecamatan }}</td>
