@@ -16,7 +16,7 @@ class LaporanSemesters implements FromView
     public function view(): View
     {
         return view('laporanSemester.export', [
-            'laporans' => LaporanSemester::all()
+            'laporans' => LaporanSemester::latest()->get()
         ]);
     }
 }

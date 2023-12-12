@@ -2,21 +2,21 @@
 
 namespace App\Exports;
 
-use App\Models\LaporanAkhir as ModelsLaporanAkhir;
+use App\Models\LaporanAkhir;
+use Maatwebsite\Excel\Concerns\Exportable;
 
 
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
-use Maatwebsite\Excel\Concerns\Exportable;
 
-class LaporanAkhir implements FromView
+class LaporanAkhirs implements FromView
 {
     use Exportable;
 
     public function view(): View
     {
         return view('laporanAkhirTahun.export', [
-            'laporans' => ModelsLaporanAkhir::all()
+            'laporans' => LaporanAkhir::latest()->get()
         ]);
     }
 }

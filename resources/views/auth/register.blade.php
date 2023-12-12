@@ -150,10 +150,6 @@
                                 <td>{{ $user->id_desa }}</td>
                                 <td>
                                     <div class="d-flex justify-content-start">
-                                        <a href="/kanal-pengaduan/{{ $user->id }}/edit"
-                                            class="btn btn-sm btn-success m-1"><i class="bi bi-pencil-square"></i></a>
-
-
                                         <form action="/register/{{ $user->id }}" method="post">
                                             @csrf
                                             @method('DELETE')

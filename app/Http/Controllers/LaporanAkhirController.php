@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Exports\LaporanAkhir as ExportsLaporanAkhir;
 use GuzzleHttp\Client;
 use App\Models\LaporanAkhir;
 use Illuminate\Http\Request;
+use App\Exports\LaporanAkhirs;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
 
 class LaporanAkhirController extends Controller
@@ -66,7 +67,7 @@ class LaporanAkhirController extends Controller
             'permasalahan' => 'required',
             'unit_usaha' => '',
             'rencana' => 'required',
-            'nilai2' => 'required',
+            'nilai2' => '',
             'unit_usaha_permodalan' => '',
             'surat' => 'required|mimes:pdf|max:10240',
             'laporan_akhir' => 'required|mimes:pdf|max:10240',
@@ -141,7 +142,7 @@ class LaporanAkhirController extends Controller
             'permasalahan' => 'required',
             'unit_usaha' => '',
             'rencana' => 'required',
-            'nilai2' => 'required',
+            'nilai2' => '',
             'unit_usaha_permodalan' => '',
             'surat' => 'mimes:pdf|max:10240',
             'laporan_akhir' => 'mimes:pdf|max:10240',
@@ -209,6 +210,6 @@ class LaporanAkhirController extends Controller
 
     public function laporanExcel()
     {
-        return (new ExportsLaporanAkhir)->download('laporan-akhir-tahun.xlsx');
+        return Excel::download(new LaporanAkhirs, 'Laporan-Akhir-Tahun.xlsx');
     }
 }

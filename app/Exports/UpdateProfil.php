@@ -15,7 +15,7 @@ class UpdateProfil implements FromView
     public function view(): View
     {
         return view('updateProfil.export', [
-            'updates' => ModelUpdateProfil::all()
+            'updates' => ModelUpdateProfil::latest()->get()
         ]);
     }
 }

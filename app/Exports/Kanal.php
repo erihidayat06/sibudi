@@ -17,7 +17,7 @@ class Kanal implements FromView
     public function view(): View
     {
         return view('kanalPanduan.export', [
-            'kanals' => KanalPengaduan::all()
+            'kanals' => KanalPengaduan::latest()->get()
         ]);
     }
 }

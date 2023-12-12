@@ -35,10 +35,6 @@ class KanalPengaduanController extends Controller
     public function admin()
     {
 
-        if (bukaFitur(4)) {
-            return view('bukaFitur.halamanTutup');
-        }
-
         return view('kanalPanduan.admin', [
             'kanals' => KanalPengaduan::latest()->get()
         ]);

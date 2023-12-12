@@ -9,7 +9,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Update Profil BUMDes</h5>
 
-                        <a href="/update-profil/create" class="btn btn-sm btn-primary mt-3 mb-3">Tambah Lopran</a>
+                        <a href="/update-profil/create" class="btn btn-sm btn-primary mt-3 mb-3">Tambah Laporan</a>
 
                         <!-- Table with stripped rows -->
                         <div class="table-responsive">

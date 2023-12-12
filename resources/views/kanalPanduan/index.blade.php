@@ -9,7 +9,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Kanal Pengaduan</h5>
 
-                        <a href="/kanal-pengaduan/create" class="btn btn-sm btn-primary mt-3 mb-3">Tambah Lopran</a>
+                        <a href="/kanal-pengaduan/create" class="btn btn-sm btn-primary mt-3 mb-3">Tambah Laporan</a>
 
                         <!-- Table with stripped rows -->
                         <div class="table-responsive">

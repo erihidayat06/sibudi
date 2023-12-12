@@ -10,7 +10,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Laporan Akhir Tahun / Pengajuan Penamanbahan Modal</h5>
 
-                        <a href="/laporan-akhir/create" class="btn btn-sm btn-primary mt-3 mb-3">Tambah Lopran</a>
+                        <a href="/laporan-akhir/create" class="btn btn-sm btn-primary mt-3 mb-3">Tambah Laporan</a>
 
                         <!-- Table with stripped rows -->
                         <div class="table-responsive">
