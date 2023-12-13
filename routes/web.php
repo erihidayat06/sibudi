@@ -1,13 +1,13 @@
 <?php
 
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\BukaFiturController;
 use App\Models\LaporanSemester;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\BukaFiturController;
 use App\Http\Controllers\LaporanAkhirController;
 use App\Http\Controllers\UpdateProfilController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ProfilSingkatController;
 use App\Http\Controllers\KanalPengaduanController;
 use App\Http\Controllers\LaporanSemesterController;
@@ -44,6 +44,7 @@ Route::get('/update-profil-admin', [UpdateProfilController::class, 'admin'])->mi
 Route::get('/export-update-profil', [UpdateProfilController::class, 'laporanExcel'])->middleware('admin');
 
 Route::post('/login-admin', [LoginController::class, 'authenticate'])->middleware('guest');
+
 
 Route::get('buka-fitur', [BukaFiturController::class, 'index'])->middleware('admin');
 Route::put('buka-fitur/{bukaFitur:id}', [BukaFiturController::class, 'update'])->middleware('admin');
