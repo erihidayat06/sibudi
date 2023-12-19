@@ -46,9 +46,7 @@ class LaporanSemesterController extends Controller
             return view('bukaFitur.halamanTutup');
         }
 
-        return view('laporanSemester.create', [
-            'kecamatans' => app('kecamatan')
-        ]);
+        return view('laporanSemester.create');
     }
 
     /**
@@ -73,14 +71,8 @@ class LaporanSemesterController extends Controller
 
         ]);
 
+
         $validateData['user_id'] = auth()->user()->id;
-
-
-        foreach (app('kecamatan') as $kec) {
-            if ($request->kecamatan == $kec['id']) {
-                $validateData['kecamatan'] = $kec['name'];
-            }
-        }
 
 
         $validateData['surat'] = $request->file('surat')->store('post');
@@ -113,7 +105,7 @@ class LaporanSemesterController extends Controller
 
         return view('laporanSemester.edit', [
             'laporan' => $laporanSemester,
-            'kecamatans' => app('kecamatan')
+
         ]);
     }
 
@@ -137,11 +129,6 @@ class LaporanSemesterController extends Controller
             'file_rancangan' => '',
         ]);
 
-        foreach (app('kecamatan') as $kec) {
-            if ($request->kecamatan == $kec['id']) {
-                $validateData['kecamatan'] = $kec['name'];
-            }
-        }
 
         if ($request->hasFile('surat')) {
             // Update file PDF jika ada yang diunggah

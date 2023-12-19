@@ -51,7 +51,7 @@
                         <label class="mt-3" for="nilai">Nilai</label>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="nilai">Rp</span>
-                            <input type="text" class="form-control @error('nilai') is-invalid @enderror"
+                            <input type="number" class="form-control @error('nilai') is-invalid @enderror"
                                 value="{{ old('nilai', $laporan) }}" name="nilai" id="nilai" aria-describedby="nilai">
                         </div>
                         @error('nilai')
@@ -76,7 +76,7 @@
 
                         {{-- unit usaha --}}
                         <label class="mt-3" for="unit_usaha">Unit Usaha yang Akan di Jalankan</label>
-                        @foreach (explode(',', old('unit_usaha', $laporan)) as $usaha)
+                        @foreach (explode(',', $laporan->unit_usaha) as $usaha)
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="{{ $usaha }}"
                                     name="unit_usaha[]" id="{{ $usaha }}" checked>
@@ -85,7 +85,7 @@
                                 </label>
                             </div>
                         @endforeach
-                        @foreach (array_diff($unit_usaha, explode(',', old('unit_usaha', $laporan))) as $unit)
+                        @foreach (array_diff($unit_usaha, explode(',', $laporan->unit_usaha)) as $unit)
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="{{ $unit }}"
                                     name="unit_usaha[]" id="{{ $unit }}">
@@ -120,7 +120,7 @@
                         <label class="mt-3" for="nilai2">nilai Pengajuan</label>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="nilai2">Rp</span>
-                            <input type="text" class="form-control @error('nilai2') is-invalid @enderror"
+                            <input type="number" class="form-control @error('nilai2') is-invalid @enderror"
                                 value="{{ old('nilai2', $laporan) }}" name="nilai2" id="nilai2"
                                 aria-describedby="nilai2">
                         </div>

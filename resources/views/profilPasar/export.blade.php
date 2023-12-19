@@ -3,27 +3,27 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Tanggal</th>
-            <th scope="col">Status_Pengelola</th>
-            <th scope="col">Nomor_Perdes</th>
-            <th scope="col">Kepemilikan_Tanah</th>
+            <th scope="col">Status Pengelola</th>
+            <th scope="col">Nomor Perdes</th>
+            <th scope="col">Kepemilikan Tanah</th>
             <th scope="col">Luas</th>
-            <th scope="col">Kondisi_Bangunan</th>
-            <th scope="col">Luas_Bangunan</th>
-            <th scope="col">Kantor_Pasar_Desa</th>
-            <th scope="col">Memiliki_Tempat_parkir</th>
-            <th scope="col">Memiliki_Musolah</th>
-            <th scope="col">Jumlah_Kios</th>
-            <th scope="col">Jumlah_Los</th>
-            <th scope="col">Jumlah_Toilet</th>
-            <th scope="col">Jumlah_pedagang</th>
-            <th scope="col">Sumber_Pembiayaan</th>
-            <th scope="col">Hasil_Retribusi</th>
-            <th scope="col">Kontribusi_PADes</th>
-            <th scope="col">Kondisi_Fisik_Pasar</th>
+            <th scope="col">Kondisi Bangunan</th>
+            <th scope="col">Luas Bangunan</th>
+            <th scope="col">Kantor Pasar Desa</th>
+            <th scope="col">Memiliki Tempat parkir</th>
+            <th scope="col">Memiliki Musolah</th>
+            <th scope="col">Jumlah Kios</th>
+            <th scope="col">Jumlah Los</th>
+            <th scope="col">Jumlah Toilet</th>
+            <th scope="col">Jumlah pedagang</th>
+            <th scope="col">Sumber Pembiayaan</th>
+            <th scope="col">Hasil Retribusi</th>
+            <th scope="col">Kontribusi PADes</th>
+            <th scope="col">Kondisi Fisik Pasar</th>
             <th scope="col">Kendala/Permasalahan</th>
-            <th scope="col">Profil_Pasar_Desa</th>
-            <th scope="col">Perdes_Pengelolaan_Pasar_Desa_</th>
-            <th scope="col">Sk_Pengelola</th>
+            <th scope="col">Profil Pasar Desa</th>
+            <th scope="col">Perdes Pengelolaan Pasar Desa </th>
+            <th scope="col">Sk Pengelola</th>
         </tr>
     </thead>
     <tbody>
@@ -33,7 +33,7 @@
         @foreach ($profils as $profil)
             <tr>
                 <th scope="row">{{ $i++ }}</th>
-                <td>{{ date('d_F_Y', strtotime($profil->created_at)) }}</td>
+                <td>{{ date('d F Y', strtotime($profil->created_at)) }}</td>
                 <td>{{ $profil->status_pengelola }}</td>
                 <td>{{ $profil->no_perdes }}</td>
                 <td>{{ $profil->no_sk }}</td>

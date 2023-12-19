@@ -56,8 +56,10 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'kecamatan' => ['required', 'string', 'max:255'],
             'desa' => ['required', 'string', 'max:255'],
-            'id_desa' => ['required', 'string', 'max:255'],
+            'id_desa' => ['required', 'string', 'max:255', 'unique:App\Models\User,id_desa'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ], [
+            'id_desa.unique' => 'Id Desa Harus Berbeda'
         ]);
     }
 

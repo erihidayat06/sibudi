@@ -123,9 +123,9 @@ class UpdateProfilController extends Controller
             'nama_penasehat' => 'required',
             'bidang_usaha_dijalankan' => '',
             'bidang_usaha_utama' => 'required',
-            'perdes_pendiri' => 'mimes:pdf|max:10240',
-            'sk_pengelola' => 'mimes:pdf|max:10240',
-            'setifikat_badan' => 'mimes:pdf|max:10240',
+            'perdes_pendiri' => 'max:10240',
+            'sk_pengelola' => 'max:10240',
+            'setifikat_badan' => 'max:10240',
         ]);
 
         if ($request->bidang_usaha_dijalankan == null) {

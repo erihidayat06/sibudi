@@ -49,7 +49,7 @@
                         <label class="mt-3" for="nilai">Nilai</label>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="nilai">Rp</span>
-                            <input type="text" class="form-control @error('nilai') is-invalid @enderror"
+                            <input type="number" class="form-control @error('nilai') is-invalid @enderror"
                                 value="{{ old('nilai') }}" name="nilai" id="nilai" aria-describedby="nilai">
                         </div>
 
@@ -113,7 +113,7 @@
                         <label class="mt-3" for="nilai2">nilai Pengajuan</label>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="nilai2">Rp</span>
-                            <input type="text" class="form-control @error('nilai2') is-invalid @enderror"
+                            <input type="number" class="form-control @error('nilai2') is-invalid @enderror"
                                 value="{{ old('nilai2') }}" name="nilai2" id="nilai2" aria-describedby="nilai2">
                         </div>
                         @error('nilai2')

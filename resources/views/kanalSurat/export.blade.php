@@ -18,7 +18,7 @@
          @foreach ($kanal_surats as $kanal)
              <tr>
                  <th scope="row">{{ $i++ }}</th>
-                 <td>{{ date('d_F_Y', strtotime($kanal->created_at)) }}</td>
+                 <td>{{ date('d F Y', strtotime($kanal->created_at)) }}</td>
                  <td>{{ $kanal->judul_surat }}</td>
                  <td>{{ $kanal->dari }}</td>
                  <td>{{ $kanal->kepada }}</td>

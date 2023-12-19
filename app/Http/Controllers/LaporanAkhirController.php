@@ -172,7 +172,7 @@ class LaporanAkhirController extends Controller
             'kecamatan' => 'required',
             'desa' => 'required',
             'capaian' => 'required',
-            'nilai' => 'required',
+            'nilai' => 'required|max:11',
             'pades' => '',
             'permasalahan' => 'required',
             'unit_usaha' => '',
