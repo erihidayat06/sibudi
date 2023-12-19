@@ -55,9 +55,10 @@
 
                         {{-- Isi Ringkasan --}}
                         <label class="mt-3" for="isi_ringkasan">Isi Ringkasan</label>
-                        <input type="text"
+                        <textarea
                             class="form-control @error('isi_ringkasan') is-invalid @enderror @error('isi_ringkasan') is-invalid @enderror"
-                            name="isi_ringkasan" id="isi_ringkasan" value="{{ old('isi_ringkasan', $kanal) }}">
+                            name="isi_ringkasan" id="isi_ringkasan" cols="30" rows="5">{{ old('isi_ringkasan', $kanal) }}</textarea>
+
 
                         @error('isi_ringkasan')
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
