@@ -163,7 +163,7 @@
                             <label for="perdes_pendiri" class="form-label">Perdes Pendirian BUMDesa</label>
                             <input class="form-control @error('perdes_pendiri') is-invalid @enderror form-control-sm"
                                 id="perdes_pendiri" value="{{ old('perdes_pendiri', $update) }}" type="file"
-                                accept=".pdf" name="perdes_pendiri">
+                                name="perdes_pendiri">
                         </div>
 
                         @error('perdes_pendiri')
@@ -175,7 +175,7 @@
                             <label for="sk_pengelola" class="form-label">SK Pengelola</label>
                             <input class="form-control @error('sk_pengelola') is-invalid @enderror form-control-sm"
                                 id="sk_pengelola" value="{{ old('sk_pengelola', $update) }}" type="file"
-                                accept=".pdf" name="sk_pengelola">
+                                name="sk_pengelola">
                         </div>
 
                         @error('sk_pengelola')
@@ -187,7 +187,7 @@
                             <label for="setifikat_badan" class="form-label">Sertifikat Badan Hukum</label>
                             <input class="form-control @error('setifikat_badan') is-invalid @enderror form-control-sm"
                                 id="setifikat_badan" value="{{ old('setifikat_badan', $update) }}" type="file"
-                                accept=".pdf" name="setifikat_badan">
+                                name="setifikat_badan">
                         </div>
 
                         @error('setifikat_badan')

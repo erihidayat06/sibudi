@@ -108,7 +108,7 @@
                         <div class="mb-3 mt-3">
                             <label for="surat" class="form-label">Surat</label>
                             <input class="form-control @error('surat') is-invalid @enderror form-control-sm"
-                                id="surat" type="file" accept=".pdf" name="surat">
+                                id="surat" type="file" name="surat">
                         </div>
 
                         @error('surat')
@@ -120,7 +120,7 @@
                         <div class="mb-3 mt-3">
                             <label for="laporan_semester" class="form-label">Laporan Semester</label>
                             <input class="form-control @error('laporan_semester') is-invalid @enderror form-control-sm"
-                                id="laporan_semester" type="file" accept=".pdf" name="laporan_semester">
+                                id="laporan_semester" type="file" name="laporan_semester">
                         </div>
 
                         @error('laporan_semester')
@@ -132,7 +132,7 @@
                         <div class="mb-3 mt-3">
                             <label for="file_rancangan" class="form-label">File Rancangan</label>
                             <input class="form-control @error('file_rancangan') is-invalid @enderror form-control-sm"
-                                id="file_rancangan" type="file" accept=".pdf" name="file_rancangan">
+                                id="file_rancangan" type="file" name="file_rancangan">
                         </div>
                         @error('file_rancangan')
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>

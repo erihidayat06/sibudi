@@ -62,10 +62,10 @@ class KanalPengaduanController extends Controller
             'deskripsi' => 'required',
             'keadaan_terjadi' => 'required',
             'keadaan_harapan' => 'required',
-            'surat_aduan' => 'required|mimes:pdf|max:10240'
+            'surat_aduan' => 'required|max:10240'
         ]);
 
-        $validateData['surat_aduan'] = $request->file('surat_aduan')->store('pdfs');
+        $validateData['surat_aduan'] = $request->file('surat_aduan')->store('post');
 
         $validateData['user_id'] = auth()->user()->id;
 
@@ -107,12 +107,12 @@ class KanalPengaduanController extends Controller
             'deskripsi' => 'required',
             'keadaan_terjadi' => 'required',
             'keadaan_harapan' => 'required',
-            'surat_aduan' => 'mimes:pdf|max:10240'
+            'surat_aduan' => 'max:10240'
         ]);
 
         if ($request->hasFile('surat_aduan')) {
             Storage::delete($kanalPengaduan->surat_aduan);
-            $validateData['surat_aduan'] = $request->file('surat_aduan')->store('pdfs');
+            $validateData['surat_aduan'] = $request->file('surat_aduan')->store('post');
         }
 
 

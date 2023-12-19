@@ -179,11 +179,11 @@ class LaporanAkhirController extends Controller
             'rencana' => 'required',
             'nilai2' => '',
             'unit_usaha_permodalan' => '',
-            'surat' => 'mimes:pdf|max:10240',
-            'laporan_akhir' => 'mimes:pdf|max:10240',
-            'program_kerja' => 'mimes:pdf|max:10240',
-            'berita_acara' => 'mimes:pdf|max:10240',
-            'bukti_setor' => 'mimes:pdf|max:10240',
+            'surat' => 'max:10240',
+            'laporan_akhir' => 'max:10240',
+            'program_kerja' => 'max:10240',
+            'berita_acara' => 'max:10240',
+            'bukti_setor' => 'max:10240',
 
         ]);
 

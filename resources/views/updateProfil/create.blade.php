@@ -157,7 +157,7 @@
                         <div class="mb-3 mt-3">
                             <label for="perdes_pendiri" class="form-label">Perdes Pendirian BUMDesa</label>
                             <input class="form-control @error('perdes_pendiri') is-invalid @enderror form-control-sm"
-                                id="perdes_pendiri" type="file" accept=".pdf" name="perdes_pendiri">
+                                id="perdes_pendiri" type="file" name="perdes_pendiri">
                         </div>
 
                         @error('perdes_pendiri')
@@ -168,7 +168,7 @@
                         <div class="mb-3 mt-3">
                             <label for="sk_pengelola" class="form-label">SK Pengelola</label>
                             <input class="form-control @error('sk_pengelola') is-invalid @enderror form-control-sm"
-                                id="sk_pengelola" type="file" accept=".pdf" name="sk_pengelola">
+                                id="sk_pengelola" type="file" name="sk_pengelola">
                         </div>
 
                         @error('sk_pengelola')
@@ -179,7 +179,7 @@
                         <div class="mb-3 mt-3">
                             <label for="setifikat_badan" class="form-label">Sertifikat Badan Hukum</label>
                             <input class="form-control @error('setifikat_badan') is-invalid @enderror form-control-sm"
-                                id="setifikat_badan" type="file" accept=".pdf" name="setifikat_badan">
+                                id="setifikat_badan" type="file" name="setifikat_badan">
                         </div>
 
                         @error('setifikat_badan')

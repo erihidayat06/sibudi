@@ -65,16 +65,16 @@ class UpdateProfilController extends Controller
             'nama_penasehat' => 'required',
             'bidang_usaha_dijalankan' => '',
             'bidang_usaha_utama' => 'required',
-            'perdes_pendiri' => 'required|mimes:pdf|max:10240',
-            'sk_pengelola' => 'required|mimes:pdf|max:10240',
-            'setifikat_badan' => 'required|mimes:pdf|max:10240',
+            'perdes_pendiri' => 'required|max:10240',
+            'sk_pengelola' => 'required|max:10240',
+            'setifikat_badan' => 'required|max:10240',
         ]);
 
         $validateData['user_id'] = auth()->user()->id;
 
-        $validateData['perdes_pendiri'] = $request->file('perdes_pendiri')->store('pdfs');
-        $validateData['sk_pengelola'] = $request->file('sk_pengelola')->store('pdfs');
-        $validateData['setifikat_badan'] = $request->file('setifikat_badan')->store('pdfs');
+        $validateData['perdes_pendiri'] = $request->file('perdes_pendiri')->store('post');
+        $validateData['sk_pengelola'] = $request->file('sk_pengelola')->store('post');
+        $validateData['setifikat_badan'] = $request->file('setifikat_badan')->store('post');
 
         UpdateProfil::create($validateData);
 
@@ -135,19 +135,19 @@ class UpdateProfilController extends Controller
         if ($request->hasFile('perdes_pendiri')) {
             // Update file PDF jika ada yang diunggah
             Storage::delete($updateProfil->perdes_pendiri);
-            $validateData['perdes_pendiri'] = $request->file('perdes_pendiri')->store('pdfs');
+            $validateData['perdes_pendiri'] = $request->file('perdes_pendiri')->store('post');
         }
 
         if ($request->hasFile('sk_pengelola')) {
             // Update file PDF jika ada yang diunggah
             Storage::delete($updateProfil->sk_pengelola);
-            $validateData['sk_pengelola'] = $request->file('sk_pengelola')->store('pdfs');
+            $validateData['sk_pengelola'] = $request->file('sk_pengelola')->store('post');
         }
 
         if ($request->hasFile('setifikat_badan')) {
             // Update file PDF jika ada yang diunggah
             Storage::delete($updateProfil->setifikat_badan);
-            $validateData['setifikat_badan'] = $request->file('setifikat_badan')->store('pdfs');
+            $validateData['setifikat_badan'] = $request->file('setifikat_badan')->store('post');
         }
 
 

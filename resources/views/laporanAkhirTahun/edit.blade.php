@@ -142,7 +142,7 @@
                         <div class="mb-3 mt-3">
                             <label for="surat" class="form-label">Surat</label>
                             <input class="form-control @error('surat') is-invalid @enderror form-control-sm"
-                                id="surat" type="file" accept=".pdf" name="surat">
+                                id="surat" type="file" name="surat">
                         </div>
 
                         @error('surat')
@@ -153,7 +153,7 @@
                         <div class="mb-3 mt-3">
                             <label for="laporan_akhir" class="form-label">Laporan akhir Tahun</label>
                             <input class="form-control @error('laporan_akhir') is-invalid @enderror form-control-sm"
-                                id="laporan_akhir" type="file" accept=".pdf" name="laporan_akhir">
+                                id="laporan_akhir" type="file" name="laporan_akhir">
                         </div>
 
                         @error('laporan_akhir')
@@ -164,7 +164,7 @@
                         <div class="mb-3 mt-3">
                             <label for="program_kerja" class="form-label">Program Kerja yang di Sahkan</label>
                             <input class="form-control @error('program_kerja') is-invalid @enderror form-control-sm"
-                                id="program_kerja" type="file" accept=".pdf" name="program_kerja">
+                                id="program_kerja" type="file" name="program_kerja">
                         </div>
                         @error('program_kerja')
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
@@ -174,7 +174,7 @@
                         <div class="mb-3 mt-3">
                             <label for="berita_acara" class="form-label">Berita Acara Musdes</label>
                             <input class="form-control @error('berita_acara') is-invalid @enderror form-control-sm"
-                                id="berita_acara" type="file" accept=".pdf" name="berita_acara">
+                                id="berita_acara" type="file" name="berita_acara">
                         </div>
                         @error('berita_acara')
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
@@ -184,7 +184,7 @@
                         <div class="mb-3 mt-3">
                             <label for="bukti_setor" class="form-label">Bukti Setor PADes</label>
                             <input class="form-control @error('bukti_setor') is-invalid @enderror form-control-sm"
-                                id="bukti_setor" type="file" accept=".pdf" name="bukti_setor">
+                                id="bukti_setor" type="file" name="bukti_setor">
                         </div>
                         @error('bukti_setor')
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>

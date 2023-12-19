@@ -55,7 +55,7 @@
                         <div class="mb-3 mt-3">
                             <label for="surat_aduan" class="form-label">Surat Aduan</label>
                             <input class="form-control @error('surat_aduan') is-invalid @enderror form-control-sm"
-                                id="surat_aduan" type="file" accept=".pdf" name="surat_aduan">
+                                id="surat_aduan" type="file" name="surat_aduan">
                         </div>
 
                         @error('surat_aduan')

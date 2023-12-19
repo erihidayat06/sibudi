@@ -67,9 +67,9 @@ class LaporanSemesterController extends Controller
             'rencana' => 'required',
             'nilai2' => '',
             'unit_usaha' => '',
-            'surat' => 'required|mimes:pdf|max:10240',
-            'laporan_semester' => 'required|mimes:pdf|max:10240',
-            'file_rancangan' => 'required|mimes:pdf|max:10240',
+            'surat' => 'required|max:10240',
+            'laporan_semester' => 'required|max:10240',
+            'file_rancangan' => 'required|max:10240',
 
         ]);
 
@@ -83,9 +83,9 @@ class LaporanSemesterController extends Controller
         }
 
 
-        $validateData['surat'] = $request->file('surat')->store('pdfs');
-        $validateData['laporan_semester'] = $request->file('laporan_semester')->store('pdfs');
-        $validateData['file_rancangan'] = $request->file('file_rancangan')->store('pdfs');
+        $validateData['surat'] = $request->file('surat')->store('post');
+        $validateData['laporan_semester'] = $request->file('laporan_semester')->store('post');
+        $validateData['file_rancangan'] = $request->file('file_rancangan')->store('post');
 
 
 
@@ -146,18 +146,18 @@ class LaporanSemesterController extends Controller
         if ($request->hasFile('surat')) {
             // Update file PDF jika ada yang diunggah
             Storage::delete($laporanSemester->surat);
-            $validateData['surat'] = $request->file('surat')->store('pdfs');
+            $validateData['surat'] = $request->file('surat')->store('post');
         }
 
         if ($request->hasFile('laporan_semester')) {
             // Update file PDF jika ada yang diunggah
             Storage::delete($laporanSemester->laporan_semester);
-            $validateData['laporan_semester'] = $request->file('laporan_semester')->store('pdfs');
+            $validateData['laporan_semester'] = $request->file('laporan_semester')->store('post');
         }
         if ($request->hasFile('file_rancangan')) {
             // Update file PDF jika ada yang diunggah
             Storage::delete($laporanSemester->file_rancangan);
-            $validateData['file_rancangan'] = $request->file('file_rancangan')->store('pdfs');
+            $validateData['file_rancangan'] = $request->file('file_rancangan')->store('post');
         }
 
 
