@@ -7,7 +7,7 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Kanal Pengaduan</h5>
+                        <h5 class="card-title">Kanal Persuratan</h5>
 
                         <a href="/kanal-surat/create" class="btn btn-sm btn-primary mt-3 mb-3">Tambah Laporan</a>
 

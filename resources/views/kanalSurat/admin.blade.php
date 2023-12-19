@@ -7,7 +7,7 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Kanal Pengaduan</h5>
+                        <h5 class="card-title">Kanal Persuratan</h5>
 
                         <a href="/export-kanal-surat" class="btn btn-success btn-sm mb-3 mt-3">Export</a>
 
