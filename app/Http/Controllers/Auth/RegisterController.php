@@ -69,11 +69,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        foreach (app('kecamatan') as $kec) {
-            if ($data['kecamatan'] == $kec['id']) {
-                $data['kecamatan'] = $kec['name'];
-            }
-        }
+
 
         $user = User::create([
             'kecamatan' => $data['kecamatan'],

@@ -48,7 +48,25 @@ class LaporanAkhirController extends Controller
             return view('bukaFitur.halamanTutup');
         }
 
-        return view('laporanAkhirTahun.create');
+        $unit_usaha = [
+            'Pinjaman Bergulir',
+            'Pengelolaan Sampah',
+            'Pengelolaan Pasar Desa',
+            'Pengelolaan Wisata',
+            'Perdagangan',
+            'Peternakan',
+            'Pertanian',
+            'Jasa Pembayaran',
+            'Jasa Sewa',
+            'Jasa Pemasaran UMKM',
+            'Produksi',
+            'Internet Desa',
+            'Lainnya'
+        ];
+
+        return view('laporanAkhirTahun.create', [
+            'unit_usaha' => $unit_usaha
+        ]);
     }
 
     /**
@@ -57,7 +75,6 @@ class LaporanAkhirController extends Controller
     public function store(Request $request)
     {
 
-
         $validateData = $request->validate([
             'kecamatan' => 'required',
             'desa' => 'required',
@@ -65,40 +82,41 @@ class LaporanAkhirController extends Controller
             'nilai' => 'required',
             'pades' => '',
             'permasalahan' => 'required',
-            'unit_usaha' => '',
             'rencana' => 'required',
+            'unit_usaha' => '',
             'nilai2' => '',
             'unit_usaha_permodalan' => '',
-            'surat' => 'required|mimes:pdf|max:10240',
-            'laporan_akhir' => 'required|mimes:pdf|max:10240',
-            'program_kerja' => 'required|mimes:pdf|max:10240',
-            'berita_acara' => 'required|mimes:pdf|max:10240',
-            'bukti_setor' => 'mimes:pdf|max:10240',
+            'surat' => 'required|max:10240',
+            'laporan_akhir' => 'required|max:10240',
+            'program_kerja' => 'required|max:10240',
+            'berita_acara' => 'required|max:10240',
+            'bukti_setor' => 'max:10240',
 
         ]);
-        $validateData['user_id'] = auth()->user()->id;
 
+        $validateData['unit_usaha'] = implode(',', $request->unit_usaha);
+        $validateData['user_id'] = auth()->user()->id;
 
         if ($request->hasFile('surat')) {
 
-            $validateData['surat'] = $request->file('surat')->store('pdfs');
+            $validateData['surat'] = $request->file('surat')->store('post');
         }
         if ($request->hasFile('laporan_akhir')) {
 
 
-            $validateData['laporan_akhir'] = $request->file('laporan_akhir')->store('pdfs');
+            $validateData['laporan_akhir'] = $request->file('laporan_akhir')->store('post');
         }
         if ($request->hasFile('program_kerja')) {
 
-            $validateData['program_kerja'] = $request->file('program_kerja')->store('pdfs');
+            $validateData['program_kerja'] = $request->file('program_kerja')->store('post');
         }
         if ($request->hasFile('berita_acara')) {
 
-            $validateData['berita_acara'] = $request->file('berita_acara')->store('pdfs');
+            $validateData['berita_acara'] = $request->file('berita_acara')->store('post');
         }
         if ($request->hasFile('bukti_setor')) {
 
-            $validateData['bukti_setor'] = $request->file('bukti_setor')->store('pdfs');
+            $validateData['bukti_setor'] = $request->file('bukti_setor')->store('post');
         }
 
         LaporanAkhir::create($validateData);
@@ -122,8 +140,25 @@ class LaporanAkhirController extends Controller
             return view('bukaFitur.halamanTutup');
         }
 
+        $unit_usaha = [
+            'Pinjaman Bergulir',
+            'Pengelolaan Sampah',
+            'Pengelolaan Pasar Desa',
+            'Pengelolaan Wisata',
+            'Perdagangan',
+            'Peternakan',
+            'Pertanian',
+            'Jasa Pembayaran',
+            'Jasa Sewa',
+            'Jasa Pemasaran UMKM',
+            'Produksi',
+            'Internet Desa',
+            'Lainnya'
+        ];
+
         return view('laporanAkhirTahun.edit', [
-            'laporan' => $LaporanAkhir
+            'laporan' => $LaporanAkhir,
+            'unit_usaha' => $unit_usaha
         ]);
     }
 
@@ -152,30 +187,32 @@ class LaporanAkhirController extends Controller
 
         ]);
 
+        $validateData['unit_usaha'] = implode(',', $request->unit_usaha);
+
         if ($request->hasFile('surat')) {
             // Update file PDF jika ada yang diunggah
             Storage::delete($LaporanAkhir->surat);
-            $validateData['surat'] = $request->file('surat')->store('pdfs');
+            $validateData['surat'] = $request->file('surat')->store('post');
         }
         if ($request->hasFile('laporan_akhir')) {
             // Update file PDF jika ada yang diunggah
             Storage::delete($LaporanAkhir->laporan_akhir);
-            $validateData['laporan_akhir'] = $request->file('laporan_akhir')->store('pdfs');
+            $validateData['laporan_akhir'] = $request->file('laporan_akhir')->store('post');
         }
         if ($request->hasFile('program_kerja')) {
             // Update file PDF jika ada yang diunggah
             Storage::delete($LaporanAkhir->program_kerja);
-            $validateData['program_kerja'] = $request->file('program_kerja')->store('pdfs');
+            $validateData['program_kerja'] = $request->file('program_kerja')->store('post');
         }
         if ($request->hasFile('berita_acara')) {
             // Update file PDF jika ada yang diunggah
             Storage::delete($LaporanAkhir->berita_acara);
-            $validateData['berita_acara'] = $request->file('berita_acara')->store('pdfs');
+            $validateData['berita_acara'] = $request->file('berita_acara')->store('post');
         }
         if ($request->hasFile('bukti_setor')) {
             // Update file PDF jika ada yang diunggah
             Storage::delete($LaporanAkhir->bukti_setor);
-            $validateData['bukti_setor'] = $request->file('bukti_setor')->store('pdfs');
+            $validateData['bukti_setor'] = $request->file('bukti_setor')->store('post');
         }
 
 

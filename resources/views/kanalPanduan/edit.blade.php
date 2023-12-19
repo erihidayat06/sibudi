@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title">
-                        Form Kanal Pengaduan
+                        Form Kanal \
                     </div>
 
                     <form action="/kanal-pengaduan/{{ $kanal->id }}" method="POST" enctype="multipart/form-data">

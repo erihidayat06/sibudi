@@ -10,7 +10,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="/assets/img/favicon.png" rel="icon">
+    <link href="/assets/img/Brebes.jpg" rel="icon">
     <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -40,22 +40,58 @@
   ======================================================== -->
 </head>
 
+<style>
+    body {
+
+        background-image: url('/assets/img/bg.jpeg');
+
+
+        /* Full height */
+        height: 100%;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+    .custom-nav .nav-link {
+
+        color: rgb(206, 249, 255);
+        /* Warna teks */
+    }
+
+    .custom-nav .nav-link:hover {
+
+        color: rgb(224, 251, 255);
+        /* Warna teks saat dihover */
+    }
+
+    .custom-nav .nav-link.active {
+        color: rgb(255, 255, 255);
+        /* Warna teks saat aktif */
+        border-bottom: 2px solid rgb(255, 255, 255);
+        /* Garis bawah saat aktif */
+    }
+</style>
+
 <body>
 
     <main>
         <div class="container">
 
             <section
-                class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+                class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4 ">
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-lg-8 col-md-6 d-flex flex-column align-items-center justify-content-center">
+                        <div class="col-lg-8 col-lg-8 d-flex flex-column align-items-center justify-content-center ">
                             <div class="pagetitle text-center">
-                                <h1>Selamat Datang Di Website BUMDes Kab Brebes</h1>
+                                <h1 class="text-white fw-bold fs-2">Selamat Datang Di Website BUMDes Kab Brebes</h1>
                             </div>
                             <hr>
                             <div class="container">
-                                <ul class="nav nav-underline  justify-content-center mb-3" id="pills-tab"
+                                <ul class="nav nav-underline  justify-content-center mb-3 custom-nav" id="pills-tab"
                                     role="tablist">
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"

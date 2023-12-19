@@ -33,4 +33,10 @@ class RegisterController extends Controller
 
         return redirect('/login')->with('success', 'User Berhasil Di Tambah');
     }
+
+    public function getDesa()
+    {
+        $data = config('kecamatan.kecamatan');
+        return response()->json($data);
+    }
 }

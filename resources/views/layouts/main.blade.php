@@ -10,7 +10,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="/assets/img/favicon.png" rel="icon">
+    <link href="/assets/img/Brebes.jpg" rel="icon">
     <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -59,35 +59,28 @@
     @include('layouts.footer')
 
 
-
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        // Load data kecamatan and desa from Laravel config into JavaScript
+        var kecamatanOptions = @json(config('kecamatan'));
 
-            var kecamatanDropdown = document.getElementById('kecamatan');
-            var desaDropdown = document.getElementById('desa');
+        // Tambahkan event listener untuk perubahan pada pilihan kecamatan
+        document.getElementById('kecamatan').addEventListener('change', function() {
+            var selectedKecamatan = this.value;
+            var desaSelect = document.getElementById('desa');
 
-            kecamatanDropdown.addEventListener('change', function() {
-                // Panggil endpoint API untuk mendapatkan data desa berdasarkan kecamatan
-                var kecamatanId = this.value;
+            // Hapus semua opsi desa yang sudah ada
+            desaSelect.innerHTML = '';
 
-                fetch('http://www.emsifa.com/api-wilayah-indonesia/api/villages/' + kecamatanId +
-                        '.json')
-                    .then(response => response.json())
-                    .then(data => {
-                        // Bersihkan dropdown desa
-                        desaDropdown.innerHTML = '<option value="">Pilih Desa</option>';
-
-                        // Isi dropdown desa dengan data yang diterima dari API
-                        data.forEach(function(desa) {
-                            var option = document.createElement('option');
-                            option.value = desa.name;
-                            option.text = desa.name;
-                            desaDropdown.add(option);
-                        });
-                    });
+            // Tambahkan opsi desa baru berdasarkan kecamatan yang dipilih
+            kecamatanOptions[selectedKecamatan].forEach(function(desa) {
+                var option = document.createElement('option');
+                option.value = desa;
+                option.text = desa;
+                desaSelect.add(option);
             });
         });
     </script>
+
 
 </body>
 

@@ -165,7 +165,6 @@ return [
          * Application Service Providers...
          */
         App\Providers\BukaFiturProvider::class,
-        App\Providers\KecamatanProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,

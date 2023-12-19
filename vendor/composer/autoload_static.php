@@ -178,6 +178,7 @@ class ComposerStaticInit715760552f1b52fd1e33bd595c4dc47c
         'C' => 
         array (
             'Cron\\' => 5,
+            'Config\\' => 7,
             'Composer\\Semver\\' => 16,
             'Complex\\' => 8,
             'Carbon\\' => 7,
@@ -550,6 +551,10 @@ class ComposerStaticInit715760552f1b52fd1e33bd595c4dc47c
         array (
             0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
         ),
+        'Config\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/config',
+        ),
         'Composer\\Semver\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/semver/src',
@@ -587,7 +592,7 @@ class ComposerStaticInit715760552f1b52fd1e33bd595c4dc47c
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Exports\\Kanal' => __DIR__ . '/../..' . '/app/Exports/Kanal.php',
-        'App\\Exports\\LaporanAkhir' => __DIR__ . '/../..' . '/app/Exports/LaporanAkhir.php',
+        'App\\Exports\\LaporanAkhirs' => __DIR__ . '/../..' . '/app/Exports/LaporanAkhirs.php',
         'App\\Exports\\LaporanSemesters' => __DIR__ . '/../..' . '/app/Exports/LaporanSemesters.php',
         'App\\Exports\\UpdateProfil' => __DIR__ . '/../..' . '/app/Exports/UpdateProfil.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',

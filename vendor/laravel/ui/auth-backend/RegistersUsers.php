@@ -20,7 +20,6 @@ trait RegistersUsers
     public function showRegistrationForm()
     {
         return view('auth.register', [
-            'kecamatans' => app('kecamatan', [4]),
             'users' => User::latest()->get()->where('admin', FALSE)
         ]);
     }

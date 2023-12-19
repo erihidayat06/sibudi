@@ -11,16 +11,16 @@
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
 
-                            <div class="row mb-3 mt-3">
+                            <div class="row mt-3 mb-3">
                                 <label for="password"
                                     class="col-md-4 col-form-label text-md-end">{{ __('Kecamatan') }}</label>
-
                                 <div class="col-md-6">
                                     <select class="form-select @error('kecamatan') is-invalid @enderror"
                                         aria-label="Default select example" id="kecamatan" name="kecamatan">
                                         <option selected>Pilih Kecamatan</option>
-                                        @foreach (app('kecamatan', [4]) as $kecamatan)
-                                            <option value="{{ $kecamatan['id'] }}">{{ $kecamatan['name'] }}</option>
+                                        {{-- Include data kecamatan from Laravel config --}}
+                                        @foreach (config('kecamatan') as $kecamatan => $desaArray)
+                                            <option value="{{ $kecamatan }}">{{ $kecamatan }}</option>
                                         @endforeach
                                     </select>
 
@@ -30,6 +30,7 @@
 
                                 </div>
                             </div>
+
 
 
                             <div class="row mb-3">
@@ -145,7 +146,7 @@
                         @php
                             use App\Models\User;
                         @endphp
-                        @foreach (User::latest()->get()->where('admin', false) as $user)
+                        @foreach ($users as $user)
                             <tr>
                                 <th scope="row">{{ $i++ }}</th>
                                 <td>{{ $user->kecamatan }}</td>

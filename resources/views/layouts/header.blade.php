@@ -24,9 +24,9 @@
                 <li class="nav-item dropdown pe-3">
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                         @if (auth()->user()->desa)
-                            <span class="d-none d-md-block dropdown-toggle ps-2">{{ auth()->user()->desa }}</span>
+                            <span class="dropdown-toggle ps-2">{{ auth()->user()->desa }}</span>
                         @else
-                            <span class="d-none d-md-block dropdown-toggle ps-2">{{ auth()->user()->name }}</span>
+                            <span class="dropdown-toggle ps-2">{{ auth()->user()->name }}</span>
                         @endif
                     </a><!-- End Profile Iamge Icon -->
 

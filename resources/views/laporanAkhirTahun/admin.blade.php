@@ -8,7 +8,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Laporan Akhir Tahun / Pengajuan Penamanbahan Modal</h5>
+                        <h5 class="card-title">Laporan Akhir Tahun / Pengajuan Pencairan Modal</h5>
 
 
                         <a href="/export-laporan-akhir-tahun" class="btn btn-success btn-sm mb-3 mt-3">Export</a>

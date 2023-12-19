@@ -76,8 +76,24 @@
 
                         {{-- unit usaha --}}
                         <label class="mt-3" for="unit_usaha">Unit Usaha yang Akan di Jalankan</label>
-                        <input type="text" class="form-control @error('unit_usaha') is-invalid @enderror"
-                            value="{{ old('unit_usaha', $laporan) }}" name="unit_usaha" id="unit_usaha">
+                        @foreach (explode(',', old('unit_usaha', $laporan)) as $usaha)
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="{{ $usaha }}"
+                                    name="unit_usaha[]" id="{{ $usaha }}" checked>
+                                <label class="form-check-label" for="{{ $usaha }}">
+                                    {{ $usaha }}
+                                </label>
+                            </div>
+                        @endforeach
+                        @foreach (array_diff($unit_usaha, explode(',', old('unit_usaha', $laporan))) as $unit)
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="{{ $unit }}"
+                                    name="unit_usaha[]" id="{{ $unit }}">
+                                <label class="form-check-label" for="{{ $unit }}">
+                                    {{ $unit }}
+                                </label>
+                            </div>
+                        @endforeach
                         @error('unit_usaha')
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
                         @enderror

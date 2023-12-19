@@ -37,8 +37,6 @@
                                                     Laporan Akhir Tahun
                                                 @elseif ($fitur->halaman == 3)
                                                     Update Profil BUMDes
-                                                @elseif ($fitur->halaman == 4)
-                                                    Kanal Pengaduan
                                                 @endif
                                             </td>
                                             <td>

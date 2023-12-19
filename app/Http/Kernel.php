@@ -66,10 +66,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'admin' => \App\Http\Middleware\Admin::class,
-        'kanal' => \App\Http\Middleware\BukaKanal::class,
-        'laporanAkhir' => \App\Http\Middleware\LaporanAkhir::class,
-        'laporanSemester' => \App\Http\Middleware\LaporanSemester::class,
-        'updateProfil' => \App\Http\Middleware\UpdateProfil::class,
         'n_admin' => \App\Http\Middleware\NonAdmin::class,
     ];
 }

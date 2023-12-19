@@ -9,7 +9,7 @@ return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Exports\\Kanal' => $baseDir . '/app/Exports/Kanal.php',
-    'App\\Exports\\LaporanAkhir' => $baseDir . '/app/Exports/LaporanAkhir.php',
+    'App\\Exports\\LaporanAkhirs' => $baseDir . '/app/Exports/LaporanAkhirs.php',
     'App\\Exports\\LaporanSemesters' => $baseDir . '/app/Exports/LaporanSemesters.php',
     'App\\Exports\\UpdateProfil' => $baseDir . '/app/Exports/UpdateProfil.php',
     'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',

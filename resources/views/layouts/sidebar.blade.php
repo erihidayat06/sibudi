@@ -33,9 +33,16 @@
 
 
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('kanal-pengaduan*') ? '' : 'collapsed' }}" href="/kanal-pengaduan">
+                <a class="nav-link {{ Request::is('profil-pasar*') ? '' : 'collapsed' }}" href="/profil-pasar">
+                    <i class="bi bi-shop-window"></i>
+                    <span>Update Profil Pasar Desa</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('kanal-surat*') ? '' : 'collapsed' }}" href="/kanal-surat">
                     <i class="bi bi-chat-right-text"></i>
-                    <span>Kanal Pengaduan</span>
+                    <span>Kanal Persuratan</span>
                 </a>
             </li><!-- End Dashboard Nav -->
         @endcan
@@ -75,12 +82,21 @@
 
 
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('kanal-pengaduan-admin*') ? '' : 'collapsed' }}"
-                    href="/kanal-pengaduan-admin">
-                    <i class="bi bi-chat-right-text"></i>
-                    <span>Kanal Pengaduan</span>
+                <a class="nav-link {{ Request::is('profil-pasar-admin*') ? '' : 'collapsed' }}" href="/profil-pasar-admin">
+                    <i class="bi bi-shop-window"></i>
+                    <span>Update Profil Pasar Desa</span>
                 </a>
             </li><!-- End Dashboard Nav -->
+
+
+
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('kanal-surat-admin*') ? '' : 'collapsed' }}" href="/kanal-surat-admin">
+                    <i class="bi bi-chat-right-text"></i>
+                    <span>Kanal Persuratan</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+
 
             <li class="nav-heading">Pages</li>
 
