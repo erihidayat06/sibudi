@@ -86,11 +86,11 @@ class LaporanAkhirController extends Controller
             'unit_usaha' => '',
             'nilai2' => '',
             'unit_usaha_permodalan' => '',
-            'surat' => 'required|max:10240',
-            'laporan_akhir' => 'required|max:10240',
-            'program_kerja' => 'required|max:10240',
-            'berita_acara' => 'required|max:10240',
-            'bukti_setor' => 'max:10240',
+            'surat' => '',
+            'laporan_akhir' => '',
+            'program_kerja' => '',
+            'berita_acara' => '',
+            'bukti_setor' => '',
 
         ]);
 
@@ -179,11 +179,11 @@ class LaporanAkhirController extends Controller
             'rencana' => 'required',
             'nilai2' => '',
             'unit_usaha_permodalan' => '',
-            'surat' => 'max:10240',
-            'laporan_akhir' => 'max:10240',
-            'program_kerja' => 'max:10240',
-            'berita_acara' => 'max:10240',
-            'bukti_setor' => 'max:10240',
+            'surat' => '',
+            'laporan_akhir' => '',
+            'program_kerja' => '',
+            'berita_acara' => '',
+            'bukti_setor' => '',
 
         ]);
 
