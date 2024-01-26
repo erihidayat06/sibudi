@@ -41,8 +41,14 @@
                                             <td>{{ $kanal->kepada }}</td>
                                             <td>{{ $kanal->tembusan }}</td>
                                             <td>{{ $kanal->isi_ringkasan }}</td>
-
-                                            <td><a href="{{ asset('storage/' . $kanal->file) }}" target="_blank">Surat</a>
+                                            <td>
+                                                @if ($kanal->file == '0')
+                                                    -
+                                                @else
+                                                    <a href="{{ asset('storage/' . $kanal->file) }}"
+                                                        target="_blank">Surat</a>
+                                                @endif
+                                            </td>
                                             </td>
                                             <td>
                                                 <div class="d-flex justify-content-start">

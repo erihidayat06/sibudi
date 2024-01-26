@@ -48,14 +48,30 @@
                                             <td>{{ $laporan->rencana }}</td>
                                             <td>Rp.{{ number_format($laporan->nilai2, 0, ',', '.') }}</td>
                                             <td>{{ $laporan->unit_usaha }}</td>
-                                            <td><a href="{{ asset('storage/' . $laporan->surat) }}"
-                                                    target="_blank">Surat</a>
+                                            <td>
+                                                @if ($laporan->surat == '0')
+                                                    -
+                                                @else
+                                                    <a href="{{ asset('storage/' . $laporan->surat) }}"
+                                                        target="_blank">Surat</a>
+                                                @endif
                                             </td>
-                                            <td><a href="{{ asset('storage/' . $laporan->laporan_semester) }}"
-                                                    target="_blank">Laporan
-                                                    Semester</a></td>
-                                            <td><a href="{{ $laporan->file_rancangan == null ? back() : asset('storage/' . $laporan->file_rancangan) }}"
-                                                    target="_blank">Rancangan</a></td>
+                                            <td>
+                                                @if ($laporan->laporan_semester == '0')
+                                                    -
+                                                @else
+                                                    <a href="{{ asset('storage/' . $laporan->laporan_semester) }}"
+                                                        target="_blank">Laporan Semester</a>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($laporan->file_rancangan == '0')
+                                                    -
+                                                @else
+                                                    <a href="{{ asset('storage/' . $laporan->file_rancangan) }}"
+                                                        target="_blank">File Rancangan</a>
+                                                @endif
+                                            </td>
 
 
                                         </tr>

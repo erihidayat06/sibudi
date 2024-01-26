@@ -128,16 +128,17 @@
                         @enderror
 
                         {{-- bidang_usaha_dijalankan --}}
+                        <label class="mt-3" for="bidang_usaha_utama">Bidang Usaha dijalankan</label>
 
-                        <div class="form-check mt-3">
-                            <input class="form-check-input @error('bidang_usaha_dijalankan') is-invalid @enderror"
-                                type="checkbox" value="1" id="bidang_usaha_dijalankan"
-                                name="bidang_usaha_dijalankan"
-                                {{ old('bidang_usaha_dijalankan') == true ? 'checked' : '' }}>
-                            <label class="form-check-label" for="bidang_usaha_dijalankan">
-                                Bidang Usaha yang dijalankan
-                            </label>
-                        </div>
+                        @foreach ($unit_usaha as $unit)
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="{{ $unit }}"
+                                    name="bidang_usaha_dijalankan[]" id="{{ $unit }}">
+                                <label class="form-check-label" for="{{ $unit }}">
+                                    {{ $unit }}
+                                </label>
+                            </div>
+                        @endforeach
 
                         @error('bidang_usaha_dijalankan')
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>

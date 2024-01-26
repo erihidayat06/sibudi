@@ -37,10 +37,28 @@ class UpdateProfilController extends Controller
      */
     public function create()
     {
+        $unit_usaha = [
+            'Pinjaman Bergulir',
+            'Pengelolaan Sampah',
+            'Pengelolaan Pasar Desa',
+            'Pengelolaan Wisata',
+            'Perdagangan',
+            'Peternakan',
+            'Pertanian',
+            'Jasa Pembayaran',
+            'Jasa Sewa',
+            'Jasa Pemasaran UMKM',
+            'Produksi',
+            'Internet Desa',
+            'Lainnya'
+        ];
+
         if (bukaFitur(3)) {
             return view('bukaFitur.halamanTutup');
         }
-        return view('updateProfil.create');
+        return view('updateProfil.create', [
+            'unit_usaha' => $unit_usaha
+        ]);
     }
 
     /**
@@ -65,16 +83,32 @@ class UpdateProfilController extends Controller
             'nama_penasehat' => 'required',
             'bidang_usaha_dijalankan' => '',
             'bidang_usaha_utama' => 'required',
-            'perdes_pendiri' => 'required|max:10240',
-            'sk_pengelola' => 'required|max:10240',
-            'setifikat_badan' => 'required|max:10240',
+            'perdes_pendiri' => '',
+            'sk_pengelola' => '',
+            'setifikat_badan' => '',
         ]);
+
+        $validateData['bidang_usaha_dijalankan'] = implode(',', $request->bidang_usaha_dijalankan);
 
         $validateData['user_id'] = auth()->user()->id;
 
-        $validateData['perdes_pendiri'] = $request->file('perdes_pendiri')->store('post');
-        $validateData['sk_pengelola'] = $request->file('sk_pengelola')->store('post');
-        $validateData['setifikat_badan'] = $request->file('setifikat_badan')->store('post');
+        if ($request->hasFile('perdes_pendiri')) {
+            $validateData['perdes_pendiri'] = $request->file('perdes_pendiri')->store('post');
+        } else {
+            $validateData['perdes_pendiri'] = '0';
+        }
+
+        if ($request->hasFile('sk_pengelola')) {
+            $validateData['sk_pengelola'] = $request->file('sk_pengelola')->store('post');
+        } else {
+            $validateData['sk_pengelola'] = '0';
+        }
+
+        if ($request->hasFile('setifikat_badan')) {
+            $validateData['setifikat_badan'] = $request->file('setifikat_badan')->store('post');
+        } else {
+            $validateData['setifikat_badan'] = '0';
+        }
 
         UpdateProfil::create($validateData);
 
@@ -93,11 +127,28 @@ class UpdateProfilController extends Controller
      */
     public function edit(UpdateProfil $updateProfil)
     {
+        $bidang_usaha_dijalankan = [
+            'Pinjaman Bergulir',
+            'Pengelolaan Sampah',
+            'Pengelolaan Pasar Desa',
+            'Pengelolaan Wisata',
+            'Perdagangan',
+            'Peternakan',
+            'Pertanian',
+            'Jasa Pembayaran',
+            'Jasa Sewa',
+            'Jasa Pemasaran UMKM',
+            'Produksi',
+            'Internet Desa',
+            'Lainnya'
+        ];
+
         if (bukaFitur(3)) {
             return view('bukaFitur.halamanTutup');
         }
         return view('updateProfil.edit', [
-            'update' => $updateProfil
+            'update' => $updateProfil,
+            'bidang_usaha_dijalankan' => $bidang_usaha_dijalankan
         ]);
     }
 
@@ -123,14 +174,13 @@ class UpdateProfilController extends Controller
             'nama_penasehat' => 'required',
             'bidang_usaha_dijalankan' => '',
             'bidang_usaha_utama' => 'required',
-            'perdes_pendiri' => 'max:10240',
-            'sk_pengelola' => 'max:10240',
-            'setifikat_badan' => 'max:10240',
+            'perdes_pendiri' => '',
+            'sk_pengelola' => '',
+            'setifikat_badan' => '',
         ]);
 
-        if ($request->bidang_usaha_dijalankan == null) {
-            $validateData['bidang_usaha_dijalankan'] = 0;
-        }
+        $validateData['bidang_usaha_dijalankan'] = implode(',', $request->bidang_usaha_dijalankan);
+
 
         if ($request->hasFile('perdes_pendiri')) {
             // Update file PDF jika ada yang diunggah

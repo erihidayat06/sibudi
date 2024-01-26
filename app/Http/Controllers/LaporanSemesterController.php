@@ -65,21 +65,32 @@ class LaporanSemesterController extends Controller
             'rencana' => 'required',
             'nilai2' => '',
             'unit_usaha' => '',
-            'surat' => 'required|max:10240',
-            'laporan_semester' => 'required|max:10240',
-            'file_rancangan' => 'required|max:10240',
+            'surat' => '',
+            'laporan_semester' => '',
+            'file_rancangan' => '',
 
         ]);
 
 
         $validateData['user_id'] = auth()->user()->id;
 
+        if ($request->hasfile('surat')) {
+            $validateData['surat'] = $request->file('surat')->store('post');
+        } else {
+            $validateData['surat'] = 0;
+        }
 
-        $validateData['surat'] = $request->file('surat')->store('post');
-        $validateData['laporan_semester'] = $request->file('laporan_semester')->store('post');
-        $validateData['file_rancangan'] = $request->file('file_rancangan')->store('post');
+        if ($request->hasfile('laporan_semester')) {
+            $validateData['laporan_semester'] = $request->file('laporan_semester')->store('post');
+        } else {
+            $validateData['laporan_semester'] = 0;
+        }
 
-
+        if ($request->hasfile('file_rancangan')) {
+            $validateData['file_rancangan'] = $request->file('file_rancangan')->store('post');
+        } else {
+            $validateData['file_rancangan'] = 0;
+        }
 
 
         LaporanSemester::create($validateData);

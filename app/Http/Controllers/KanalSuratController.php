@@ -48,10 +48,15 @@ class KanalSuratController extends Controller
             'kepada' => 'required',
             'tembusan' => 'required',
             'isi_ringkasan' => 'required',
-            'file' => 'required|max:10240'
+            'file' => ''
         ]);
 
-        $validateData['file'] = $request->file('file')->store('post');
+        if ($request->hasFile('file')) {
+            $validateData['file'] = $request->file('file')->store('post');
+        } else {
+            $validateData['file'] = '0';
+        }
+
 
         $validateData['user_id'] = auth()->user()->id;
 
@@ -89,7 +94,7 @@ class KanalSuratController extends Controller
             'kepada' => 'required',
             'tembusan' => 'required',
             'isi_ringkasan' => 'required',
-            'file' => 'max:10240'
+            'file' => ''
         ]);
 
         if ($request->hasFile('file')) {

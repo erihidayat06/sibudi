@@ -60,22 +60,27 @@ class ProfilPasarController extends Controller
             'kontribusi_pades' => 'required',
             'kondisi_fisik_pasar' => 'required',
             'kendala' => 'required',
-            'profil_persar' => 'required|max:10240',
-            'perdes' => 'required|max:10240',
-            'sk_pengelola' => 'required|max:10240',
+            'profil_persar' => '',
+            'perdes' => '',
+            'sk_pengelola' => '',
         ]);
-
 
         if ($request->hasFile('profil_persar')) {
             $valiadateData['profil_persar'] = $request->file('profil_persar')->store('post');
+        } else {
+            $valiadateData['profil_persar'] = 0;
         }
 
         if ($request->hasFile('perdes')) {
             $valiadateData['perdes'] = $request->file('perdes')->store('post');
+        } else {
+            $valiadateData['perdes'] = 0;
         }
 
         if ($request->hasFile('sk_pengelola')) {
             $valiadateData['sk_pengelola'] = $request->file('sk_pengelola')->store('post');
+        } else {
+            $valiadateData['sk_pengelola'] = 0;
         }
 
         ProfilPasar::create($valiadateData);
@@ -126,9 +131,9 @@ class ProfilPasarController extends Controller
             'kontribusi_pades' => 'required',
             'kondisi_fisik_pasar' => 'required',
             'kendala' => 'required',
-            'profil_persar' => 'max:10240',
-            'perdes' => 'max:10240',
-            'sk_pengelola' => 'max:10240',
+            'profil_persar' => '',
+            'perdes' => '',
+            'sk_pengelola' => '',
         ]);
 
 

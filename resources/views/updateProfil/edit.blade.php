@@ -132,16 +132,25 @@
                         @enderror
 
                         {{-- bidang_usaha_dijalankan --}}
-
-                        <div class="form-check mt-3">
-                            <input class="form-check-input @error('bidang_usaha_dijalankan') is-invalid @enderror"
-                                type="checkbox" value="1" id="bidang_usaha_dijalankan"
-                                name="bidang_usaha_dijalankan"
-                                {{ old('bidang_usaha_dijalankan', $update) == 1 ? 'checked' : '' }}>
-                            <label class="form-check-label" for="bidang_usaha_dijalankan">
-                                Bidang Usaha yang dijalankan
-                            </label>
-                        </div>
+                        <label class="mt-3" for="unit_usaha">Unit Usaha yang Akan di Jalankan</label>
+                        @foreach (explode(',', $update->bidang_usaha_dijalankan) as $usaha)
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="{{ $usaha }}"
+                                    name="bidang_usaha_dijalankan[]" id="{{ $usaha }}" checked>
+                                <label class="form-check-label" for="{{ $usaha }}">
+                                    {{ $usaha }}
+                                </label>
+                            </div>
+                        @endforeach
+                        @foreach (array_diff($bidang_usaha_dijalankan, explode(',', $update->bidang_usaha_dijalankan)) as $unit)
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="{{ $unit }}"
+                                    name="bidang_usaha_dijalankan[]" id="{{ $unit }}">
+                                <label class="form-check-label" for="{{ $unit }}">
+                                    {{ $unit }}
+                                </label>
+                            </div>
+                        @endforeach
 
                         @error('bidang_usaha_dijalankan')
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>

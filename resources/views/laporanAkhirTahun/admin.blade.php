@@ -58,20 +58,46 @@
                                             <td>{{ $laporan->rencana }}</td>
                                             <td>Rp.{{ number_format($laporan->nilai2, 0, ',', '.') }}</td>
                                             <td>{{ $laporan->unit_usaha_permodalan }}</td>
-                                            <td><a href="{{ asset('storage/' . $laporan->surat) }}"
-                                                    target="_blank">Surat</a>
+                                            <td>
+                                                @if ($laporan->surat == '0')
+                                                    -
+                                                @else
+                                                    <a href="{{ asset('storage/' . $laporan->surat) }}"
+                                                        target="_blank">Surat</a>
+                                                @endif
                                             </td>
-                                            <td><a href="{{ asset('storage/' . $laporan->laporan_akhir) }}"
-                                                    target="_blank">Laporan
-                                                    Semester</a></td>
-                                            <td><a href="{{ asset('storage/' . $laporan->program_kerja) }}"
-                                                    target="_blank">Program Kerja</a></td>
 
-                                            <td><a href="{{ asset('storage/' . $laporan->berita_acara) }}"
-                                                    target="_blank">Berita Acara</a></td>
-
-                                            <td><a href="{{ $laporan->bukti_setor == null ? '' : asset('storage/' . $laporan->bukti_setor) }}"
-                                                    target="_blank">{{ $laporan->bukti_setor == null ? '-' : 'Bukti Setor' }}</a>
+                                            <td>
+                                                @if ($laporan->laporan_akhir == '0')
+                                                    -
+                                                @else
+                                                    <a href="{{ asset('storage/' . $laporan->laporan_akhir) }}"
+                                                        target="_blank">Laporan Akhir</a>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($laporan->program_kerja == '0')
+                                                    -
+                                                @else
+                                                    <a href="{{ asset('storage/' . $laporan->program_kerja) }}"
+                                                        target="_blank">Program Kerja</a>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($laporan->berita_acara == '0')
+                                                    -
+                                                @else
+                                                    <a href="{{ asset('storage/' . $laporan->berita_acara) }}"
+                                                        target="_blank">Berita Acara</a>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($laporan->bukti_setor == '0')
+                                                    -
+                                                @else
+                                                    <a href="{{ asset('storage/' . $laporan->bukti_setor) }}"
+                                                        target="_blank">Bukti Setor</a>
+                                                @endif
                                             </td>
 
 

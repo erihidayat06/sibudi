@@ -37,6 +37,7 @@
                                         <th scope="col">Kontribusi_PADes</th>
                                         <th scope="col">Kondisi_Fisik_Pasar</th>
                                         <th scope="col">Kendala/Permasalahan</th>
+                                        <th scope="col">Kendala/Permasalahan</th>
                                         <th scope="col">Profil_Pasar_Desa</th>
                                         <th scope="col">Perdes_Pengelolaan_Pasar_Desa_</th>
                                         <th scope="col">Sk_Pengelola</th>
@@ -71,15 +72,32 @@
                                             <td>{{ $profil->kondisi_fisik_pasa }}</td>
                                             <td>{{ $profil->kendala }}</td>
 
-                                            <td><a href="{{ asset('storage/' . $profil->profil_persar) }}"
-                                                    target="_blank">Surat</a>
+                                            <td>
+                                                @if ($profil->profil_persar == '0')
+                                                    -
+                                                @else
+                                                    <a href="{{ asset('storage/' . $profil->profil_persar) }}"
+                                                        target="_blank">Surat</a>
+                                                @endif
                                             </td>
-                                            <td><a href="{{ asset('storage/' . $profil->perdes) }}"
-                                                    target="_blank">Surat</a>
+                                            <td>
+                                                @if ($profil->perdes == '0')
+                                                    -
+                                                @else
+                                                    <a href="{{ asset('storage/' . $profil->perdes) }}"
+                                                        target="_blank">Surat</a>
+                                                @endif
                                             </td>
-                                            <td><a href="{{ asset('storage/' . $profil->sk_pengelola) }}"
-                                                    target="_blank">Surat</a>
+                                            <td>
+                                                @if ($profil->sk_pengelola == '0')
+                                                    -
+                                                @else
+                                                    <a href="{{ asset('storage/' . $profil->sk_pengelola) }}"
+                                                        target="_blank">Surat</a>
+                                                @endif
                                             </td>
+
+
                                             <td>
                                                 <div class="d-flex justify-content-start">
                                                     <a href="/profil-pasar/{{ $profil->id }}/edit"

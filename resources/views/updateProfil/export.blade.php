@@ -53,12 +53,30 @@
                     </td>
                     <td>{{ $update->bidang_usaha_utama }}</td>
 
-                    <td><a href="{{ asset('storage/' . $update->perdes_pendiri) }}" target="_blank">Perdes
-                            Pendiri BUMDesa</a>
+
+                    <td>
+                        @if ($update->perdes_pendiri == '0')
+                            -
+                        @else
+                            <a href="{{ asset('storage/' . $update->perdes_pendiri) }}" target="_blank">Perdes Pendiri
+                                BUMDesa</a>
+                        @endif
                     </td>
-                    <td><a href="{{ asset('storage/' . $update->sk_pengelola) }}" target="_blank">SK Pengelola</a></td>
-                    <td><a href="{{ asset('storage/' . $update->setifikat_badan) }}" target="_blank">Sertifikat Badan
-                            Hukum</a></td>
+                    <td>
+                        @if ($update->sk_pengelola == '0')
+                            -
+                        @else
+                            <a href="{{ asset('storage/' . $update->sk_pengelola) }}" target="_blank">SK Pengelola</a>
+                        @endif
+                    </td>
+                    <td>
+                        @if ($update->setifikat_badan == '0')
+                            -
+                        @else
+                            <a href="{{ asset('storage/' . $update->setifikat_badan) }}" target="_blank">Sertifikat
+                                Badan Hukum</a>
+                        @endif
+                    </td>
                 </tr>
             @endforeach
 

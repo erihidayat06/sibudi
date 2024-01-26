@@ -140,7 +140,11 @@
 
                         {{-- surat --}}
                         <div class="mb-3 mt-3">
-                            <label for="surat" class="form-label">Surat</label>
+                            <label for="surat" class="form-label">Surat</label> <br>
+                            @if (old('surat', $laporan))
+                                <a
+                                    href="{{ asset('storage/' . old('surat', $laporan)) }}">{{ old('surat', $laporan) }}</a>
+                            @endif
                             <input class="form-control @error('surat') is-invalid @enderror form-control-sm"
                                 id="surat" type="file" name="surat">
                         </div>

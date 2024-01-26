@@ -98,25 +98,37 @@ class LaporanAkhirController extends Controller
         $validateData['user_id'] = auth()->user()->id;
 
         if ($request->hasFile('surat')) {
-
             $validateData['surat'] = $request->file('surat')->store('post');
+        } else {
+            $validateData['surat'] = '0';
         }
         if ($request->hasFile('laporan_akhir')) {
 
 
             $validateData['laporan_akhir'] = $request->file('laporan_akhir')->store('post');
+        } else {
+            $validateData['laporan_akhir'] = '0';
         }
+
         if ($request->hasFile('program_kerja')) {
 
             $validateData['program_kerja'] = $request->file('program_kerja')->store('post');
+        } else {
+            $validateData['program_kerja'] = '0';
         }
+
         if ($request->hasFile('berita_acara')) {
 
             $validateData['berita_acara'] = $request->file('berita_acara')->store('post');
+        } else {
+            $validateData['berita_acara'] = '0';
         }
+
         if ($request->hasFile('bukti_setor')) {
 
             $validateData['bukti_setor'] = $request->file('bukti_setor')->store('post');
+        } else {
+            $validateData['bukti_setor'] = '0';
         }
 
         LaporanAkhir::create($validateData);
@@ -191,27 +203,37 @@ class LaporanAkhirController extends Controller
 
         if ($request->hasFile('surat')) {
             // Update file PDF jika ada yang diunggah
-            Storage::delete($LaporanAkhir->surat);
+            if ($LaporanAkhir->surat) {
+                Storage::delete($LaporanAkhir->surat);
+            }
             $validateData['surat'] = $request->file('surat')->store('post');
         }
         if ($request->hasFile('laporan_akhir')) {
             // Update file PDF jika ada yang diunggah
-            Storage::delete($LaporanAkhir->laporan_akhir);
+            if ($LaporanAkhir->Laporan_akhir) {
+                Storage::delete($LaporanAkhir->laporan_akhir);
+            }
             $validateData['laporan_akhir'] = $request->file('laporan_akhir')->store('post');
         }
         if ($request->hasFile('program_kerja')) {
             // Update file PDF jika ada yang diunggah
-            Storage::delete($LaporanAkhir->program_kerja);
+            if ($LaporanAkhir->program_kerja) {
+                Storage::delete($LaporanAkhir->program_kerja);
+            }
             $validateData['program_kerja'] = $request->file('program_kerja')->store('post');
         }
         if ($request->hasFile('berita_acara')) {
             // Update file PDF jika ada yang diunggah
-            Storage::delete($LaporanAkhir->berita_acara);
+            if ($LaporanAkhir->berita_acara) {
+                Storage::delete($LaporanAkhir->berita_acara);
+            }
             $validateData['berita_acara'] = $request->file('berita_acara')->store('post');
         }
         if ($request->hasFile('bukti_setor')) {
             // Update file PDF jika ada yang diunggah
-            Storage::delete($LaporanAkhir->bukti_setor);
+            if ($LaporanAkhir->bukti_setor) {
+                Storage::delete($LaporanAkhir->bukti_setor);
+            }
             $validateData['bukti_setor'] = $request->file('bukti_setor')->store('post');
         }
 
