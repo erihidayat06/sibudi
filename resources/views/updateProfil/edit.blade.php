@@ -170,6 +170,10 @@
                         {{-- perdes_pendiri --}}
                         <div class="mb-3 mt-3">
                             <label for="perdes_pendiri" class="form-label">Perdes Pendirian BUMDesa</label>
+                            @if (old('perdes_pendiri', $update))
+                                <br><a
+                                    href="{{ asset('storage/' . old('perdes_pendiri', $update)) }}">{{ old('perdes_pendiri', $update) }}</a>
+                            @endif
                             <input class="form-control @error('perdes_pendiri') is-invalid @enderror form-control-sm"
                                 id="perdes_pendiri" value="{{ old('perdes_pendiri', $update) }}" type="file"
                                 name="perdes_pendiri">
@@ -182,6 +186,10 @@
                         {{-- sk_pengelola --}}
                         <div class="mb-3 mt-3">
                             <label for="sk_pengelola" class="form-label">SK Pengelola</label>
+                            @if (old('sk_pengelola', $update))
+                                <br><a
+                                    href="{{ asset('storage/' . old('sk_pengelola', $update)) }}">{{ old('sk_pengelola', $update) }}</a>
+                            @endif
                             <input class="form-control @error('sk_pengelola') is-invalid @enderror form-control-sm"
                                 id="sk_pengelola" value="{{ old('sk_pengelola', $update) }}" type="file"
                                 name="sk_pengelola">
@@ -194,6 +202,10 @@
                         {{-- setifikat_badan --}}
                         <div class="mb-3 mt-3">
                             <label for="setifikat_badan" class="form-label">Sertifikat Badan Hukum</label>
+                            @if (old('setifikat_badan', $update))
+                                <br><a
+                                    href="{{ asset('storage/' . old('setifikat_badan', $update)) }}">{{ old('setifikat_badan', $update) }}</a>
+                            @endif
                             <input class="form-control @error('setifikat_badan') is-invalid @enderror form-control-sm"
                                 id="setifikat_badan" value="{{ old('setifikat_badan', $update) }}" type="file"
                                 name="setifikat_badan">

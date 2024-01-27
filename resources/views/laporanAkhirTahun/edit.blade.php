@@ -155,7 +155,11 @@
 
                         {{-- laporan akhir --}}
                         <div class="mb-3 mt-3">
-                            <label for="laporan_akhir" class="form-label">Laporan akhir Tahun</label>
+                            <label for="laporan_akhir" class="form-label">Laporan akhir Tahun</label><br>
+                            @if (old('laporan_akhir', $laporan))
+                                <a
+                                    href="{{ asset('storage/' . old('laporan_akhir', $laporan)) }}">{{ old('laporan_akhir', $laporan) }}</a>
+                            @endif
                             <input class="form-control @error('laporan_akhir') is-invalid @enderror form-control-sm"
                                 id="laporan_akhir" type="file" name="laporan_akhir">
                         </div>
@@ -166,7 +170,11 @@
 
                         {{-- Program Kerja --}}
                         <div class="mb-3 mt-3">
-                            <label for="program_kerja" class="form-label">Program Kerja yang di Sahkan</label>
+                            <label for="program_kerja" class="form-label">Program Kerja yang di Sahkan</label><br>
+                            @if (old('program_kerja', $laporan))
+                                <a
+                                    href="{{ asset('storage/' . old('program_kerja', $laporan)) }}">{{ old('program_kerja', $laporan) }}</a>
+                            @endif
                             <input class="form-control @error('program_kerja') is-invalid @enderror form-control-sm"
                                 id="program_kerja" type="file" name="program_kerja">
                         </div>
@@ -176,7 +184,11 @@
 
                         {{-- Berita Acara --}}
                         <div class="mb-3 mt-3">
-                            <label for="berita_acara" class="form-label">Berita Acara Musdes</label>
+                            <label for="berita_acara" class="form-label">Berita Acara Musdes</label><br>
+                            @if (old('berita_acara', $laporan))
+                                <a
+                                    href="{{ asset('storage/' . old('berita_acara', $laporan)) }}">{{ old('berita_acara', $laporan) }}</a>
+                            @endif
                             <input class="form-control @error('berita_acara') is-invalid @enderror form-control-sm"
                                 id="berita_acara" type="file" name="berita_acara">
                         </div>
@@ -186,7 +198,11 @@
 
                         {{-- Bukti Setoran --}}
                         <div class="mb-3 mt-3">
-                            <label for="bukti_setor" class="form-label">Bukti Setor PADes</label>
+                            <label for="bukti_setor" class="form-label">Bukti Setor PADes</label><br>
+                            @if (old('bukti_setor', $laporan))
+                                <a
+                                    href="{{ asset('storage/' . old('bukti_setor', $laporan)) }}">{{ old('bukti_setor', $laporan) }}</a>
+                            @endif
                             <input class="form-control @error('bukti_setor') is-invalid @enderror form-control-sm"
                                 id="bukti_setor" type="file" name="bukti_setor">
                         </div>

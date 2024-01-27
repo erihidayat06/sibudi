@@ -110,8 +110,11 @@
 
                         <div class="mb-3 mt-3">
                             <label for="surat" class="form-label">Surat</label>
-                            <input accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf"
-                                class="form-control @error('surat') is-invalid @enderror form-control-sm"
+                            @if (old('surat', $laporan))
+                                <br><a
+                                    href="{{ asset('storage/' . old('surat', $laporan)) }}">{{ old('surat', $laporan) }}</a>
+                            @endif
+                            <input class="form-control @error('surat') is-invalid @enderror form-control-sm"
                                 value="{{ old('surat', $laporan) }}" id="surat" type="file" name="surat">
                         </div>
 
@@ -123,8 +126,11 @@
 
                         <div class="mb-3 mt-3">
                             <label for="laporan_semester" class="form-label">Laporan Semester</label>
-                            <input accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf"
-                                class="form-control @error('laporan_semester') is-invalid @enderror form-control-sm"
+                            @if (old('laporan_semester', $laporan))
+                                <br><a
+                                    href="{{ asset('storage/' . old('laporan_semester', $laporan)) }}">{{ old('laporan_semester', $laporan) }}</a>
+                            @endif
+                            <input class="form-control @error('laporan_semester') is-invalid @enderror form-control-sm"
                                 value="{{ old('laporan_semester', $laporan) }}" id="laporan_semester" type="file"
                                 name="laporan_semester">
                         </div>
@@ -137,8 +143,11 @@
 
                         <div class="mb-3 mt-3">
                             <label for="file_rancangan" class="form-label">File Rancangan</label>
-                            <input accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf"
-                                class="form-control @error('file_rancangan') is-invalid @enderror form-control-sm"
+                            @if (old('file_rancangan', $laporan))
+                                <br><a
+                                    href="{{ asset('storage/' . old('file_rancangan', $laporan)) }}">{{ old('file_rancangan', $laporan) }}</a>
+                            @endif
+                            <input class="form-control @error('file_rancangan') is-invalid @enderror form-control-sm"
                                 value="{{ old('file_rancangan', $laporan) }}" id="file_rancangan" type="file"
                                 name="file_rancangan">
                         </div>

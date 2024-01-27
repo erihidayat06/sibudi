@@ -61,11 +61,8 @@
                                             <td>{{ $update->nama_pengawas }}</td>
                                             <td>{{ $update->nama_penasehat }}</td>
                                             <td>
-                                                @if ($update->bidang_usaha_dijalankan == 1)
-                                                    <i class="bi bi-check2-square"></i> Check
-                                                @else
-                                                    -
-                                                @endif
+                                                {{ $update->bidang_usaha_dijalankan }}
+
                                             </td>
 
                                             <td>{{ $update->bidang_usaha_utama }}</td>

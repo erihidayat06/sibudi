@@ -5,6 +5,7 @@
             <th scope="col">Tanggal</th>
             <th scope="col">Status Pengelola</th>
             <th scope="col">Nomor Perdes</th>
+            <th scope="col">Nomor SK</th>
             <th scope="col">Kepemilikan Tanah</th>
             <th scope="col">Luas</th>
             <th scope="col">Kondisi Bangunan</th>
@@ -52,7 +53,7 @@
                 <td>{{ $profil->sumber_pembiayaan }}</td>
                 <td>{{ $profil->hasi_retibusi_tahunan }}</td>
                 <td>{{ $profil->kontribusi_pades }}</td>
-                <td>{{ $profil->kondisi_fisik_pasa }}</td>
+                <td>{{ $profil->kondisi_fisik_pasar }}</td>
                 <td>{{ $profil->kendala }}</td>
 
                 <td>

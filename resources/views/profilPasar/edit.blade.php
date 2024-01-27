@@ -236,6 +236,10 @@
 
                         <div class="mb-3 mt-3">
                             <label for="profil_persar" class="form-label">Profil Pasar Desa</label>
+                            @if (old('profil_persar', $profil))
+                                <br><a
+                                    href="{{ asset('storage/' . old('profil_persar', $profil)) }}">{{ old('profil_persar', $profil) }}</a>
+                            @endif
                             <input class="form-control @error('profil_persar') is-invalid @enderror form-control-sm"
                                 id="profil_persar" type="file" name="profil_persar">
                         </div>
@@ -249,6 +253,10 @@
 
                         <div class="mb-3 mt-3">
                             <label for="perdes" class="form-label">Perdes Pengelolaan Pasar Desa</label>
+                            @if (old('perdes', $profil))
+                                <br><a
+                                    href="{{ asset('storage/' . old('perdes', $profil)) }}">{{ old('perdes', $profil) }}</a>
+                            @endif
                             <input class="form-control @error('perdes') is-invalid @enderror form-control-sm"
                                 id="perdes" type="file" name="perdes">
                         </div>
@@ -262,6 +270,10 @@
 
                         <div class="mb-3 mt-3">
                             <label for="sk_pengelola" class="form-label">SK Pengelola</label>
+                            @if (old('sk_pengelola', $profil))
+                                <br><a
+                                    href="{{ asset('storage/' . old('sk_pengelola', $profil)) }}">{{ old('sk_pengelola', $profil) }}</a>
+                            @endif
                             <input class="form-control @error('sk_pengelola') is-invalid @enderror form-control-sm"
                                 id="sk_pengelola" type="file" name="sk_pengelola">
                         </div>

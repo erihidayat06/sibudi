@@ -69,6 +69,9 @@
 
                         <div class="mb-3 mt-3">
                             <label for="file" class="form-label">File</label>
+                            @if (old('file', $kanal))
+                                <br><a href="{{ asset('storage/' . old('file', $kanal)) }}">{{ old('file', $kanal) }}</a>
+                            @endif
                             <input class="form-control @error('file') is-invalid @enderror form-control-sm" id="file"
                                 type="file" name="file">
                         </div>

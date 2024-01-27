@@ -21,6 +21,7 @@
                                         <th scope="col">Tanggal</th>
                                         <th scope="col">Status_Pengelola</th>
                                         <th scope="col">Nomor_Perdes</th>
+                                        <th scope="col">Nomor_SK</th>
                                         <th scope="col">Kepemilikan_Tanah</th>
                                         <th scope="col">Luas</th>
                                         <th scope="col">Kondisi_Bangunan</th>
@@ -36,7 +37,6 @@
                                         <th scope="col">Hasil_Retribusi</th>
                                         <th scope="col">Kontribusi_PADes</th>
                                         <th scope="col">Kondisi_Fisik_Pasar</th>
-                                        <th scope="col">Kendala/Permasalahan</th>
                                         <th scope="col">Kendala/Permasalahan</th>
                                         <th scope="col">Profil_Pasar_Desa</th>
                                         <th scope="col">Perdes_Pengelolaan_Pasar_Desa_</th>
@@ -68,7 +68,7 @@
                                             <td>{{ $profil->sumber_pembiayaan }}</td>
                                             <td>{{ $profil->hasi_retibusi_tahunan }}</td>
                                             <td>{{ $profil->kontribusi_pades }}</td>
-                                            <td>{{ $profil->kondisi_fisik_pasa }}</td>
+                                            <td>{{ $profil->kondisi_fisik_pasar }}</td>
                                             <td>{{ $profil->kendala }}</td>
 
                                             <td>
