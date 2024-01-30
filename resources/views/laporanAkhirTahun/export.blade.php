@@ -8,10 +8,11 @@
             <th scope="col">Capaian Satu Tahun</th>
             <th scope="col">Nilai</th>
             <th scope="col">PADes</th>
+            <th scope="col">Nilai Aset Akhir Tahun</th>
             <th scope="col">Permasalahan</th>
             <th scope="col">Unit usaha</th>
             <th scope="col">Rencana Penambahan Modal</th>
-            <th scope="col">Nilai</th>
+            <th scope="col">Nilai Pengajuan</th>
             <th scope="col">Unit Usaha yang di Kembangkan dengan Permodalan</th>
             <th scope="col">Surat</th>
             <th scope="col">Laporan Akhir Tahun</th>
@@ -34,7 +35,8 @@
                 <td>{{ $laporan->desa }}</td>
                 <td>{{ $laporan->capaian }}</td>
                 <td>Rp.{{ number_format($laporan->nilai, 0, ',', '.') }}</td>
-                <td>{{ $laporan->pandes }}</td>
+                <td>{{ number_format($laporan->pades, 0, ',', '.') }}</td>
+                <td>Rp.{{ number_format($laporan->nilai_aset, 0, ',', '.') }}</td>
                 <td>{{ $laporan->permasalahan }}</td>
                 <td>{{ $laporan->unit_usaha }}</td>
                 <td>{{ $laporan->rencana }}</td>

@@ -65,6 +65,19 @@
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
                         @enderror
 
+                        {{-- nilai_aset --}}
+                        <label class="mt-3" for="nilai_aset">Nilai Aset Akhir Tahun</label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="nilai_aset">Rp</span>
+                            <input type="number" class="form-control @error('nilai_aset') is-invalid @enderror"
+                                value="{{ old('nilai_aset') }}" name="nilai_aset" id="nilai_aset"
+                                aria-describedby="nilai_aset">
+                        </div>
+
+                        @error('nilai_aset')
+                            <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+
                         {{-- Permasalahan --}}
                         <label class="mt-3" for="permasalahan">Permasalahan yang Mempengaruhi Usaha</label>
                         <textarea class="form-control @error('permasalahan') is-invalid @enderror" name="permasalahan" id="permasalahan"
