@@ -80,6 +80,7 @@ class LaporanAkhirController extends Controller
             'desa' => 'required',
             'unit_usaha' => 'nullable|numeric|max:99999999999',
             'capaian' => 'required',
+
             'nilai' => 'required|numeric|max:99999999999',
             'pades' => 'nullable|numeric|max:99999999999',
             'nilai_aset' => 'required|numeric|max:99999999999',
@@ -91,6 +92,7 @@ class LaporanAkhirController extends Controller
         ]);
         $validateData['permasalahan'] = auth()->user()->id;
         $validateData['unit_usaha_permodalan'] = auth()->user()->id;
+
         $validateData['user_id'] = auth()->user()->id;
 
         if ($request->hasFile('surat')) {
@@ -181,6 +183,7 @@ class LaporanAkhirController extends Controller
             'desa' => 'required',
             'unit_usaha' => 'nullable|numeric|max:99999999999',
             'capaian' => 'required',
+
             'nilai' => 'required|numeric|max:99999999999',
             'pades' => 'nullable|numeric|max:99999999999',
             'nilai_aset' => 'required|numeric|max:99999999999',

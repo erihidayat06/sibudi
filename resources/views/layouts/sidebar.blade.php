@@ -20,7 +20,7 @@
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('laporan-akhir*') ? '' : 'collapsed' }}" href="/laporan-akhir">
                     <i class="bi bi-clipboard2-fill"></i>
-                    <span>Laporan Akhir Tahun</span>
+                    <span>Laporan Pertanggungjawaban</span>
                 </a>
             </li><!-- End Dashboard Nav -->
 
@@ -68,7 +68,7 @@
                 <a class="nav-link {{ Request::is('laporan-akhir-admin*') ? '' : 'collapsed' }}"
                     href="/laporan-akhir-admin">
                     <i class="bi bi-clipboard2-fill"></i>
-                    <span>Laporan Akhir Tahun</span>
+                    <span>Laporan Pertanggungjawaban</span>
                 </a>
             </li><!-- End Dashboard Nav -->
 

@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title">
-                        Form Laporan Akhir Tahun
+                        Edit Laporan Pertanggungjawaban
                     </div>
 
                     <form action="/laporan-akhir/{{ $laporan->id }}" method="POST" enctype="multipart/form-data">
@@ -15,19 +15,24 @@
 
                         {{-- Kecamatan --}}
                         <label class="mt-3" for="kecamatan">Kecamatan</label>
+
                         <input type="text" class="form-control @error('kecamatan') is-invalid @enderror" name="kecamatan"
                             id="kecamatan" value="{{ old('kecamatan', auth()->user()->kecamatan) }}" readonly>
+
                         @error('kecamatan')
                             <div class="invalid-feedback" style="font-size: 12px;">{{ $message }}</div>
                         @enderror
 
                         {{-- Desa --}}
                         <label class="mt-3" for="desa">Desa</label>
+
                         <input type="text" class="form-control @error('desa') is-invalid @enderror" name="desa"
                             id="desa" value="{{ old('desa', auth()->user()->desa) }}" readonly>
+
                         @error('desa')
                             <div class="invalid-feedback" style="font-size: 12px;">{{ $message }}</div>
                         @enderror
+
 
                         {{-- unit_usaha --}}
                         <label class="mt-3" for="unit_usaha">Pendapatan / Omset satu tahun</label>
@@ -51,15 +56,18 @@
                         </div>
                         @error('capaian')
                             <div class="invalid-feedback" style="font-size: 12px;">{{ $message }}</div>
+
                         @enderror
                         <br>
 
                         {{-- Nilai --}}
                         <label class="mt-3" for="nilai">Nilai</label>
+
                         <div class="input-group">
                             <span class="input-group-text">Rp</span>
                             <input type="number" class="form-control @error('nilai') is-invalid @enderror" name="nilai"
                                 id="nilai" value="{{ old('nilai', $laporan->nilai) }}">
+
                         </div>
                         @error('nilai')
                             <div class="invalid-feedback" style="font-size: 12px;">{{ $message }}</div>
@@ -67,17 +75,21 @@
 
                         {{-- PADes --}}
                         <label class="mt-3" for="pades">PADes</label>
+
                         <input type="number" class="form-control @error('pades') is-invalid @enderror" name="pades"
                             id="pades" value="{{ old('pades', $laporan->pades) }}">
+
                         @error('pades')
                             <div class="invalid-feedback" style="font-size: 12px;">{{ $message }}</div>
                         @enderror
 
                         {{-- Nilai Aset --}}
+
                         <label class="mt-3" for="nilai_aset">Nilai Aset Akhir Tahun</label>
                         <div class="input-group">
                             <span class="input-group-text">Rp</span>
                             <input type="number" class="form-control @error('nilai_aset') is-invalid @enderror"
+
                                 name="nilai_aset" id="nilai_aset" value="{{ old('nilai_aset', $laporan->nilai_aset) }}">
                         </div>
                         @error('nilai_aset')
@@ -111,8 +123,9 @@
                             </div>
                         @endforeach
 
+
                         <div class="card-footer">
-                            <button class="btn btn-primary">Kirim</button>
+                            <button class="btn btn-primary">Update</button>
                         </div>
                     </form>
                 </div>

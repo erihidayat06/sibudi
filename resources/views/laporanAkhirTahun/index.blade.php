@@ -8,7 +8,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Laporan Akhir Tahun / Pengajuan Pencairan Modal</h5>
+                        <h5 class="card-title">Laporan Pertanggungjawaban / Pengajuan Pencairan Modal</h5>
 
                         <a href="/laporan-akhir/create" class="btn btn-sm btn-primary mt-3 mb-3">Tambah Laporan</a>
 
@@ -21,16 +21,20 @@
                                         <th scope="col">Tanggal</th>
                                         <th scope="col">Kecamatan</th>
                                         <th scope="col">Desa</th>
+
                                         <th scope="col">Pendapatan_omset_satu_tahun</th>
+
                                         <th scope="col">Capaian_Satu_Tahun</th>
                                         <th scope="col">Nilai</th>
                                         <th scope="col">PADes</th>
                                         <th scope="col">Nilai_Aset_Akhir_Tahun</th>
                                         <th scope="col">Laporan_Keuangan</th>
+
                                         <th scope="col">Laporan_Akhir_Tahun</th>
                                         <th scope="col">Program_Kerja</th>
                                         <th scope="col">Berita_Acara_Musdes</th>
                                         <th scope="col">Bukti_Setor_PADes</th>
+
                                         <th scope="col">Aksi</th>
                                     </tr>
                                 </thead>
@@ -44,11 +48,14 @@
                                             <td>{{ date('d_F_Y', strtotime($laporan->created_at)) }}</td>
                                             <td>{{ $laporan->kecamatan }}</td>
                                             <td>{{ $laporan->desa }}</td>
+
                                             <td>Rp.{{ number_format($laporan->unit_usaha, 0, ',', '.') }}</td>
+
                                             <td>{{ $laporan->capaian }}</td>
                                             <td>Rp.{{ number_format($laporan->nilai, 0, ',', '.') }}</td>
                                             <td>{{ number_format($laporan->pades, 0, ',', '.') }}</td>
                                             <td>Rp.{{ number_format($laporan->nilai_aset, 0, ',', '.') }}</td>
+
                                             <td>
                                                 @if ($laporan->surat == '0')
                                                     -
@@ -57,6 +64,7 @@
                                                         target="_blank">Laporan_Keuangan</a>
                                                 @endif
                                             </td>
+
                                             <td>
                                                 @if ($laporan->laporan_akhir == '0')
                                                     -
@@ -89,6 +97,7 @@
                                                         target="_blank">Bukti Setor</a>
                                                 @endif
                                             </td>
+
                                             <td>
                                                 <div class="d-flex justify-content-start">
                                                     <a href="/laporan-akhir/{{ $laporan->id }}/edit"
