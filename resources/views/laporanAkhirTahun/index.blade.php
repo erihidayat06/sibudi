@@ -49,7 +49,7 @@
                                             <td>{{ $laporan->kecamatan }}</td>
                                             <td>{{ $laporan->desa }}</td>
 
-                                            <td>Rp.{{ number_format($laporan->unit_usaha, 0, ',', '.') }}</td>
+                                            <td>Rp.{{ number_format(intval($laporan->unit_usaha), 0, ',', '.') }}</td>
 
                                             <td>{{ $laporan->capaian }}</td>
                                             <td>Rp.{{ number_format($laporan->nilai, 0, ',', '.') }}</td>
