@@ -27,6 +27,20 @@
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
                         @enderror
 
+                        {{-- unit_usaha --}}
+                        <label class="mt-3" for="unit_usaha">Pendapatan / Omset satu tahun</label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="unit_usaha">Rp</span>
+                            <input type="number" class="form-control @error('unit_usaha') is-invalid @enderror"
+                                value="{{ old('unit_usaha') }}" name="unit_usaha" id="unit_usaha"
+                                aria-describedby="unit_usaha">
+                        </div>
+
+                        @error('unit_usaha')
+                            <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+
+
                         {{-- capaian --}}
                         <label class="mt-3" for="capaian">Capaian satu tahun</label><br>
                         <div class="btn-group" role="group" aria-label="Small radio toggle button group">
@@ -79,7 +93,7 @@
                         @enderror
 
                         {{-- Permasalahan --}}
-                        <label class="mt-3" for="permasalahan">Permasalahan yang Mempengaruhi Usaha</label>
+                        {{-- <label class="mt-3" for="permasalahan">Permasalahan yang Mempengaruhi Usaha</label>
                         <textarea class="form-control @error('permasalahan') is-invalid @enderror" name="permasalahan" id="permasalahan"
                             cols="20" rows="5">{{ old('permasalahan') }}</textarea>
                         @error('permasalahan')
@@ -87,7 +101,7 @@
                         @enderror
 
                         {{-- unit usaha --}}
-                        <label class="mt-3" for="unit_usaha">Unit Usaha yang Akan di Jalankan</label>
+                        {{-- <label class="mt-3" for="unit_usaha">Unit Usaha yang Akan di Jalankan</label>
                         @foreach ($unit_usaha as $unit)
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="{{ $unit }}"
@@ -104,7 +118,7 @@
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
                         @enderror
 
-                        {{-- rencana --}}
+
                         <label class="mt-3" for="rencana">Rencana Penambahan Modal</label><br>
                         <div class="btn-group" role="group" aria-label="Small radio toggle button group">
                             <input type="radio" class="btn-check @error('rencana') is-invalid @enderror" name="rencana"
@@ -122,7 +136,7 @@
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
                         @enderror
 
-                        {{-- nilai2 --}}
+
                         <label class="mt-3" for="nilai2">nilai Pengajuan</label>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="nilai2">Rp</span>
@@ -133,7 +147,7 @@
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
                         @enderror
 
-                        {{-- unit usaha --}}
+
                         <label class="mt-3" for="unit_usaha_permodalan">Unit Usaha yang dikembangkan dengan
                             permodalan</label>
                         <input type="text" class="form-control @error('unit_usaha_permodalan') is-invalid @enderror"
@@ -141,11 +155,11 @@
                             id="unit_usaha_permodalan">
                         @error('unit_usaha_permodalan')
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
-                        @enderror
+                        @enderror --}}
 
                         {{-- surat --}}
                         <div class="mb-3 mt-3">
-                            <label for="surat" class="form-label">Surat</label>
+                            <label for="surat" class="form-label">Laporan Keuangan</label>
                             <input class="form-control @error('surat') is-invalid @enderror form-control-sm"
                                 id="surat" type="file" name="surat">
                         </div>
