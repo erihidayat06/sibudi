@@ -15,97 +15,114 @@
 
                         {{-- Kecamatan --}}
                         <label class="mt-3" for="kecamatan">Kecamatan</label>
-                        <input type="text" class="form-control @error('kecamatan') is-invalid @enderror disabled"
-                            name="kecamatan" id="kecamatan" value="{{ $laporan->kecamatan ?? auth()->user()->kecamatan }}">
+
+                        <input type="text" class="form-control @error('kecamatan') is-invalid @enderror" name="kecamatan"
+                            id="kecamatan" value="{{ old('kecamatan', auth()->user()->kecamatan) }}" readonly>
+
                         @error('kecamatan')
-                            <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
+                            <div class="invalid-feedback" style="font-size: 12px;">{{ $message }}</div>
                         @enderror
 
                         {{-- Desa --}}
                         <label class="mt-3" for="desa">Desa</label>
-                        <input type="text" class="form-control @error('desa') is-invalid @enderror disabled"
-                            name="desa" id="desa" value="{{ $laporan->desa ?? auth()->user()->desa }}">
+
+                        <input type="text" class="form-control @error('desa') is-invalid @enderror" name="desa"
+                            id="desa" value="{{ old('desa', auth()->user()->desa) }}" readonly>
+
                         @error('desa')
-                            <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
+                            <div class="invalid-feedback" style="font-size: 12px;">{{ $message }}</div>
                         @enderror
 
-                        {{-- Pendapatan/Omset --}}
-                        <label class="mt-3" for="unit_usaha">Pendapatan/Omset Satu Tahun</label>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="unit_usaha" id="unit_usaha1"
-                                value="Pendapatan" {{ $laporan->unit_usaha == 'Pendapatan' ? 'checked' : '' }}>
-                            <label class="form-check-label" for="unit_usaha1">Pendapatan</label>
+
+                        {{-- unit_usaha --}}
+                        <label class="mt-3" for="unit_usaha">Pendapatan / Omset satu tahun</label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="unit_usaha">Rp</span>
+                            <input type="number" class="form-control @error('unit_usaha') is-invalid @enderror"
+                                value="{{ old('unit_usaha', $laporan) }}" name="unit_usaha" id="unit_usaha"
+                                aria-describedby="unit_usaha">
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="unit_usaha" id="unit_usaha2"
-                                value="Omset satu tahun" {{ $laporan->unit_usaha == 'Omset satu tahun' ? 'checked' : '' }}>
-                            <label class="form-check-label" for="unit_usaha2">Omset satu tahun</label>
-                        </div>
-                        @error('unit_usaha')
-                            <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
-                        @enderror
 
                         {{-- Capaian --}}
                         <label class="mt-3" for="capaian">Capaian Satu Tahun</label><br>
-                        <div class="btn-group" role="group" aria-label="Small radio toggle button group">
-                            <input type="radio" class="btn-check @error('capaian') is-invalid @enderror" name="capaian"
-                                id="capaian1" value="untung" {{ $laporan->capaian == 'untung' ? 'checked' : '' }}>
-                            <label class="btn btn-outline-primary" for="capaian1">Untung</label>
+                        <div class="btn-group" role="group">
+                            <input type="radio" class="btn-check" name="capaian" id="capaian_untung" value="untung"
+                                {{ old('capaian', $laporan->capaian) == 'untung' ? 'checked' : '' }}>
+                            <label class="btn btn-outline-primary" for="capaian_untung">Untung</label>
 
-                            <input type="radio" class="btn-check @error('capaian') is-invalid @enderror" name="capaian"
-                                id="capaian2" value="rugi" {{ $laporan->capaian == 'rugi' ? 'checked' : '' }}>
-                            <label class="btn btn-outline-primary" for="capaian2">Rugi</label>
-                        </div><br>
+                            <input type="radio" class="btn-check" name="capaian" id="capaian_rugi" value="rugi"
+                                {{ old('capaian', $laporan->capaian) == 'rugi' ? 'checked' : '' }}>
+                            <label class="btn btn-outline-primary" for="capaian_rugi">Rugi</label>
+                        </div>
                         @error('capaian')
-                            <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
+                            <div class="invalid-feedback" style="font-size: 12px;">{{ $message }}</div>
+
                         @enderror
+                        <br>
 
                         {{-- Nilai --}}
                         <label class="mt-3" for="nilai">Nilai</label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="nilai">Rp</span>
-                            <input type="number" class="form-control @error('nilai') is-invalid @enderror"
-                                value="{{ $laporan->nilai ?? old('nilai') }}" name="nilai" id="nilai"
-                                aria-describedby="nilai">
+
+                        <div class="input-group">
+                            <span class="input-group-text">Rp</span>
+                            <input type="number" class="form-control @error('nilai') is-invalid @enderror" name="nilai"
+                                id="nilai" value="{{ old('nilai', $laporan->nilai) }}">
+
                         </div>
                         @error('nilai')
-                            <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
+                            <div class="invalid-feedback" style="font-size: 12px;">{{ $message }}</div>
                         @enderror
 
                         {{-- PADes --}}
                         <label class="mt-3" for="pades">PADes</label>
-                        <input type="number" class="form-control @error('pades') is-invalid @enderror"
-                            value="{{ $laporan->pades ?? old('pades') }}" name="pades" id="pades">
+
+                        <input type="number" class="form-control @error('pades') is-invalid @enderror" name="pades"
+                            id="pades" value="{{ old('pades', $laporan->pades) }}">
+
                         @error('pades')
-                            <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
+                            <div class="invalid-feedback" style="font-size: 12px;">{{ $message }}</div>
                         @enderror
 
-                        {{-- Nilai Aset Akhir Tahun --}}
+                        {{-- Nilai Aset --}}
+
                         <label class="mt-3" for="nilai_aset">Nilai Aset Akhir Tahun</label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="nilai_aset">Rp</span>
+                        <div class="input-group">
+                            <span class="input-group-text">Rp</span>
                             <input type="number" class="form-control @error('nilai_aset') is-invalid @enderror"
-                                value="{{ $laporan->nilai_aset ?? old('nilai_aset') }}" name="nilai_aset" id="nilai_aset"
-                                aria-describedby="nilai_aset">
+
+                                name="nilai_aset" id="nilai_aset" value="{{ old('nilai_aset', $laporan->nilai_aset) }}">
                         </div>
                         @error('nilai_aset')
-                            <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
+                            <div class="invalid-feedback" style="font-size: 12px;">{{ $message }}</div>
                         @enderror
 
-                        {{-- Laporan Keuangan lengkap --}}
-                        <div class="mb-3 mt-3">
-                            <label for="surat" class="form-label">Laporan Keuangan Lengkap</label>
-                            <input class="form-control @error('surat') is-invalid @enderror form-control-sm"
-                                id="surat" type="file" name="surat">
-                            @if ($laporan->surat)
-                                <small class="form-text">File saat ini: <a
-                                        href="{{ asset('storage/' . $laporan->surat) }}" target="_blank">Lihat
-                                        File</a></small>
-                            @endif
-                        </div>
-                        @error('surat')
-                            <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
-                        @enderror
+                        {{-- Uploads --}}
+                        @php
+                            $fileFields = [
+                                'surat' => 'Surat',
+                                'laporan_akhir' => 'Laporan Akhir Tahun',
+                                'program_kerja' => 'Program Kerja',
+                                'berita_acara' => 'Berita Acara',
+                                'bukti_setor' => 'Bukti Setor',
+                            ];
+                        @endphp
+
+                        @foreach ($fileFields as $field => $label)
+                            <div class="mb-3">
+                                <label for="{{ $field }}" class="form-label">{{ $label }}</label><br>
+                                @if ($laporan->$field)
+                                    <a href="{{ asset('storage/' . $laporan->$field) }}" target="_blank">
+                                        {{ $laporan->$field }}
+                                    </a>
+                                @endif
+                                <input class="form-control @error($field) is-invalid @enderror" id="{{ $field }}"
+                                    type="file" name="{{ $field }}">
+                                @error($field)
+                                    <div class="invalid-feedback" style="font-size: 12px;">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        @endforeach
+
 
                         <div class="card-footer">
                             <button class="btn btn-primary">Update</button>

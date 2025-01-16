@@ -78,17 +78,21 @@ class LaporanAkhirController extends Controller
         $validateData = $request->validate([
             'kecamatan' => 'required',
             'desa' => 'required',
+            'unit_usaha' => 'nullable|numeric|max:99999999999',
             'capaian' => 'required',
-            'nilai' => 'required|max:11',
-            'pades' => '',
-            'nilai_aset' => 'required|max:11',
-            'surat' => '',
 
+            'nilai' => 'required|numeric|max:99999999999',
+            'pades' => 'nullable|numeric|max:99999999999',
+            'nilai_aset' => 'required|numeric|max:99999999999',
+            'surat' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
+            'laporan_akhir' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
+            'program_kerja' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
+            'berita_acara' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
+            'bukti_setor' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
         ]);
+        $validateData['permasalahan'] = auth()->user()->id;
+        $validateData['unit_usaha_permodalan'] = auth()->user()->id;
 
-        $validateData['unit_usaha_permodalan'] = $request->unit_usaha;
-        $validateData['permasalahan'] = $request->unit_usaha;
-        $validateData['unit_usaha'] = $request->unit_usaha;
         $validateData['user_id'] = auth()->user()->id;
 
         if ($request->hasFile('surat')) {
@@ -177,17 +181,21 @@ class LaporanAkhirController extends Controller
         $validateData = $request->validate([
             'kecamatan' => 'required',
             'desa' => 'required',
+            'unit_usaha' => 'nullable|numeric|max:99999999999',
             'capaian' => 'required',
-            'nilai' => 'required|max:11',
-            'pades' => '',
-            'nilai_aset' => 'required|max:11',
-            'unit_usaha' => '',
-            'surat' => '',
-        ]);
 
-        $validateData['unit_usaha_permodalan'] = $request->unit_usaha;
-        $validateData['permasalahan'] = $request->unit_usaha;
-        $validateData['unit_usaha'] = $request->unit_usaha;
+            'nilai' => 'required|numeric|max:99999999999',
+            'pades' => 'nullable|numeric|max:99999999999',
+            'nilai_aset' => 'required|numeric|max:99999999999',
+            'surat' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
+            'laporan_akhir' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
+            'program_kerja' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
+            'berita_acara' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
+            'bukti_setor' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
+        ]);
+        $validateData['permasalahan'] = auth()->user()->id;
+        $validateData['unit_usaha_permodalan'] = auth()->user()->id;
+        $validateData['user_id'] = auth()->user()->id;
 
         if ($request->hasFile('surat')) {
             // Update file PDF jika ada yang diunggah
