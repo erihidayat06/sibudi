@@ -150,7 +150,7 @@
                         </div>
                         @error('nilai2')
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
-                        @enderror --}}
+                        @enderror
 
 
 
@@ -162,7 +162,7 @@
                             id="unit_usaha_permodalan">
                         @error('unit_usaha_permodalan')
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
-                        @enderror --}}
+                        @enderror
 
 
                         {{-- surat --}}
@@ -175,7 +175,7 @@
 
 
                         {{-- laporan akhir --}}
-                        {{-- <div class="mb-3 mt-3">
+                        <div class="mb-3 mt-3">
                             <label for="laporan_akhir" class="form-label">Laporan akhir Tahun</label>
                             <input class="form-control @error('laporan_akhir') is-invalid @enderror form-control-sm"
                                 id="laporan_akhir" type="file" name="laporan_akhir">
@@ -183,37 +183,37 @@
 
                         @error('laporan_akhir')
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
-                        @enderror --}}
+                        @enderror
 
                         {{-- Program Kerja --}}
-                        {{-- <div class="mb-3 mt-3">
+                        <div class="mb-3 mt-3">
                             <label for="program_kerja" class="form-label">Program Kerja yang di Sahkan</label>
                             <input class="form-control @error('program_kerja') is-invalid @enderror form-control-sm"
                                 id="program_kerja" type="file" name="program_kerja">
                         </div>
                         @error('program_kerja')
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
-                        @enderror --}}
+                        @enderror
 
                         {{-- Berita Acara --}}
-                        {{-- <div class="mb-3 mt-3">
+                        <div class="mb-3 mt-3">
                             <label for="berita_acara" class="form-label">Berita Acara Musdes</label>
                             <input class="form-control @error('berita_acara') is-invalid @enderror form-control-sm"
                                 id="berita_acara" type="file" name="berita_acara">
                         </div>
                         @error('berita_acara')
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
-                        @enderror --}}
+                        @enderror
 
                         {{-- Bukti Setoran --}}
-                        {{-- <div class="mb-3 mt-3">
+                        <div class="mb-3 mt-3">
                             <label for="bukti_setor" class="form-label">Bukti Setor PADes</label>
                             <input class="form-control @error('bukti_setor') is-invalid @enderror form-control-sm"
                                 id="bukti_setor" type="file" name="bukti_setor">
                         </div>
                         @error('bukti_setor')
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
-                        @enderror --}}
+                        @enderror
 
 
                         <div class="card-footer">
