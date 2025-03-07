@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title">
-                        Form Laporan Pertanggungjawaban
+                        Form Laporan Pertanggung jawaban
                     </div>
 
                     <form action="/laporan-akhir" method="POST" enctype="multipart/form-data">
@@ -141,7 +141,7 @@
                         @enderror --}}
 
 
-                        <label class="mt-3" for="nilai2">nilai Pengajuan</label>
+                        {{-- <label class="mt-3" for="nilai2">nilai Pengajuan</label>
 
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="nilai2">Rp</span>
@@ -150,11 +150,11 @@
                         </div>
                         @error('nilai2')
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
-                        @enderror
+                        @enderror --}}
 
 
 
-                        <label class="mt-3" for="unit_usaha_permodalan">Unit Usaha yang dikembangkan dengan
+                        {{-- <label class="mt-3" for="unit_usaha_permodalan">Unit Usaha yang dikembangkan dengan
 
                             permodalan</label>
                         <input type="text" class="form-control @error('unit_usaha_permodalan') is-invalid @enderror"
@@ -162,7 +162,7 @@
                             id="unit_usaha_permodalan">
                         @error('unit_usaha_permodalan')
                             <div style="font-size: 12px" class="invalid-feedback">{{ $message }}</div>
-                        @enderror
+                        @enderror --}}
 
 
                         {{-- surat --}}

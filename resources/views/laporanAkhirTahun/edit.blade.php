@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title">
-                        Edit Laporan Pertanggungjawaban
+                        Edit Laporan Pertanggung jawaban
                     </div>
 
                     <form action="/laporan-akhir/{{ $laporan->id }}" method="POST" enctype="multipart/form-data">
@@ -56,7 +56,6 @@
                         </div>
                         @error('capaian')
                             <div class="invalid-feedback" style="font-size: 12px;">{{ $message }}</div>
-
                         @enderror
                         <br>
 
@@ -89,7 +88,6 @@
                         <div class="input-group">
                             <span class="input-group-text">Rp</span>
                             <input type="number" class="form-control @error('nilai_aset') is-invalid @enderror"
-
                                 name="nilai_aset" id="nilai_aset" value="{{ old('nilai_aset', $laporan->nilai_aset) }}">
                         </div>
                         @error('nilai_aset')
