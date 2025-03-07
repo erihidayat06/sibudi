@@ -68,7 +68,7 @@
                 <a class="nav-link {{ Request::is('laporan-akhir-admin*') ? '' : 'collapsed' }}"
                     href="/laporan-akhir-admin">
                     <i class="bi bi-clipboard2-fill"></i>
-                    <span>LPJ</span>
+                    <span>Laporan Pertanggung Jawaban</span>
                 </a>
             </li><!-- End Dashboard Nav -->
 

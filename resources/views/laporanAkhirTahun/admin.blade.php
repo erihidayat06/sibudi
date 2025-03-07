@@ -8,7 +8,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Laporan Akhir Tahun / Pengajuan Pencairan Modal</h5>
+                        <h5 class="card-title">Laporan Penanggung Jawaban</h5>
 
                         <a href="/export-laporan-akhir-tahun" class="btn btn-success btn-sm mb-3 mt-3">Export</a>
 
@@ -62,7 +62,6 @@
                                                 @else
                                                     <a href="{{ asset('storage/' . $laporan->surat) }}"
                                                         target="_blank">Laporan_Keuangan</a>
-
                                                 @endif
                                             </td>
                                             <td>
@@ -70,7 +69,7 @@
                                                     -
                                                 @else
                                                     <a href="{{ asset('storage/' . $laporan->laporan_akhir) }}"
-                                                        target="_blank">Laporan Akhir</a>
+                                                        target="_blank">Laporan Penanggung Jawaban</a>
                                                 @endif
                                             </td>
                                             <td>
@@ -95,7 +94,6 @@
                                                 @else
                                                     <a href="{{ asset('storage/' . $laporan->bukti_setor) }}"
                                                         target="_blank">Bukti Setor</a>
-
                                                 @endif
                                             </td>
                                         </tr>

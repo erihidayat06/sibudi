@@ -70,7 +70,7 @@
                                                     -
                                                 @else
                                                     <a href="{{ asset('storage/' . $laporan->laporan_akhir) }}"
-                                                        target="_blank">Laporan Akhir</a>
+                                                        target="_blank">Laporan Penanggung Jawaban</a>
                                                 @endif
                                             </td>
                                             <td>

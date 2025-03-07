@@ -176,9 +176,9 @@
 
                         {{-- laporan akhir --}}
                         <div class="mb-3 mt-3">
-                            <label for="laporan_akhir" class="form-label">Laporan akhir Tahun</label>
-                            <input class="form-control @error('laporan_akhir') is-invalid @enderror form-control-sm"
-                                id="laporan_akhir" type="file" name="laporan_akhir">
+                            <label for="laporan_akhir" class="form-label">Laporan Penanggung Jawaban/label>
+                                <input class="form-control @error('laporan_akhir') is-invalid @enderror form-control-sm"
+                                    id="laporan_akhir" type="file" name="laporan_akhir">
                         </div>
 
                         @error('laporan_akhir')

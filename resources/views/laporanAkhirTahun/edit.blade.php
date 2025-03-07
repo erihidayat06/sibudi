@@ -98,7 +98,7 @@
                         @php
                             $fileFields = [
                                 'surat' => 'Surat',
-                                'laporan_akhir' => 'Laporan Akhir Tahun',
+                                'laporan_akhir' => 'Laporan Penanggung Jawaban',
                                 'program_kerja' => 'Program Kerja',
                                 'berita_acara' => 'Berita Acara',
                                 'bukti_setor' => 'Bukti Setor',

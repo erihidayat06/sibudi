@@ -168,7 +168,7 @@
 
                         {{-- laporan akhir --}}
                         <div class="mb-3 mt-3">
-                            <label for="laporan_akhir" class="form-label">Laporan akhir Tahun</label><br>
+                            <label for="laporan_akhir" class="form-label">Laporan Penanggung Jawaban</label><br>
                             @if (old('laporan_akhir', $laporan))
                                 <a
                                     href="{{ asset('storage/' . old('laporan_akhir', $laporan)) }}">{{ old('laporan_akhir', $laporan) }}</a>
